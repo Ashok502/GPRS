@@ -1,0 +1,26 @@
+<div id="success"></div>
+<% if @posts.present? %>
+<% @posts.each do |post| %>
+<div class="row <%= cycle('even', 'odd') %>">
+	<div class="pull-right post-remove">
+		<%= current_user ? (link_to "<span class='fa fa-times fa-lg'></span>".html_safe, post_path(post), method: :delete, data: {confirm: "Are you sure"}, remote: true) : "" %>
+	</div>
+	<div class="col-sm-3">
+		<div class="well">
+			<p><%= post.user.username %></p>
+			<%= image_tag post.user.avatar.url, class: "img-circle", alt: "Avatar" %>
+		</div>
+	</div>
+	<div class="col-sm-9">	  
+		<div class="well">
+			<p><%= post.body.html_safe %></p>
+		</div>
+		<% if current_user %>
+
+		<% end %>
+	</div>
+</div>
+<% end %>
+<% else %>
+<p>No Posts </p>
+<% end %>

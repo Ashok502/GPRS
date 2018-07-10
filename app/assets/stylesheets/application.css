@@ -1,0 +1,93 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ *= require bootstrap-wysihtml5
+ */
+
+ body{
+ 	background: #ddd;
+ }
+
+ .interests{
+ 	line-height: 25px;
+ }
+
+ .post-remove{margin: -10px;}
+
+ #intrest_notification{font-size: 12px;}
+
+ #intrest_name, #ad_image{
+ 	width: 140px;
+ 	margin-right: 2px;
+ }
+
+ .count{
+ 	border: 1px solid red;
+ 	color: white;
+ 	border-radius: 50%;
+ 	padding: 2px 5px;
+ }
+
+ .img-circle{
+ 	width: 65px;
+ 	height: 65px;
+ }
+
+ .logo img{
+ 	width: 40px;
+ 	height: 40px;
+ 	margin-top: -10px;
+ 	margin-right: -10px;
+ 	border-radius: 50%;
+ 	padding: 2px;
+ 	border: 1px solid lightgray;
+ }
+
+ p{text-transform: capitalize;}
+
+ .well{background: white;padding: 10px 19px;margin-bottom: 10px;}
+
+ .well img{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
+
+ .even, .odd{padding: 10px;margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;border-radius: 3px;}
+
+ .even .col-sm-9 p, .odd .col-sm-9 p{text-align: left;font-size: 12px;text-transform: initial;}
+
+ .header-search:focus{
+ 	width: 300px !important;
+ }
+
+ .links{text-align: left;list-style: none;padding-left: 0;}
+
+ .alert{padding: 5px 10px;}
+
+ .links li{display: inline-block;}
+
+ .nav > li > a{padding-right: 5px;}
+
+ .wysihtml5-toolbar .btn-default{font-size: 10px;}
+
+ .error-message{
+ 	list-style: none;
+ 	color: red;
+ 	padding-left: 0;
+ 	line-height: 24px;
+ }
+
+ footer {
+ 	background-color: #555;
+ 	padding: 15px 15px;
+ 	color: white;
+ }

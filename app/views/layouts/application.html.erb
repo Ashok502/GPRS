@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Gprs" %></title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag "application", :media => "all" %>   
+  <%= javascript_include_tag "application" %>
+</head>
+<body>
+
+  <%= render partial: "/layouts/header" %>
+
+  <div class="container text-center">    
+    <div class="row">
+      <%= render partial: "/layouts/left_side" %>
+
+      <div class="col-sm-6">
+        <%= bootstrap_flash %>
+        <%= render partial: "/layouts/search" %>
+        <div class="well">
+          <%= yield %>
+        </div>
+      </div>
+      <%= render partial: "/layouts/right_side" %>
+    </div>
+  </div>  
+  <%= render partial: "/layouts/chat" %>
+  <div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-hidden="true">
+    <%= render partial: "/profiles/password" %>
+  </div>
+  <div class="modal fade" id="ChangeProfile" tabindex="-1" role="dialog" aria-hidden="true">
+    <%= render partial: "/profiles/profile" %>
+  </div>
+</body>
+</html>

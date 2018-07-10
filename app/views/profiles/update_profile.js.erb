@@ -1,0 +1,7 @@
+<% if !@user.errors.present? %>
+$("#ChangeProfile").modal('hide');
+$(".user-photo").html('<%= user_photo(current_user) %>')
+$("#post_notification").html("Successfully Updated the details").addClass("alert alert-success");
+<% else %>
+$("#profile_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: current_user}%>');
+<% end %>

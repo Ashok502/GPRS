@@ -1,0 +1,32 @@
+ <div class="col-sm-3 well">
+  <div class="well interests">
+    <div class="user-photo">
+      <%= user_photo(current_user) %>
+    </div>
+    <p>
+      <% interests = ["#{current_user.username}","#{current_user.email}"] %>
+      <% for interest in interests %>
+      <span class="label <%= cycle('label-success', 'label-primary', 'label-default', 'label-info', 'label-warning', 'label-danger') %>"><%= interest %></span>
+      <% end %>
+    </p>
+  </div>
+  <div class="well">
+    <div class="panel-body">
+      <div id="intrest_notification"></div>
+      <%= form_for @intrest, html: {class: 'form-inline'}, remote: true do |f| %>      
+      <fieldset>
+        <div class="form-group mx-sm-3 mb-2">
+        <%= f.text_field :name, class: 'form-control pull-left', autocomplete: "off", placeholder: "Interests", required: true %>
+
+          <button type="submit" class="btn btn-default mb-2 pull-right"><span class="fa fa-envelope"></span></button>
+        </div>
+      </fieldset>
+      <% end %>
+    </div>
+  </div>
+  <div class="well interests">
+    <div id="intrests">
+      <%= render partial: "/intrests/index" %>
+    </div>
+  </div>  
+</div>

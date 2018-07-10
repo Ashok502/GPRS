@@ -1,0 +1,5 @@
+<p>
+	<% @intrests.each do |interest| %>
+	<span class="label <%= cycle('label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger') %>"><%= interest.name %></span>
+	<% end %>
+</p>

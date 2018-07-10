@@ -1,0 +1,7 @@
+<% if !@intrest.errors.present? %>
+  $("#intrests").html('<%= escape_javascript render partial: "index" %>');
+  $("#intrest_notification").hide();
+  $("#intrest_name").val('');
+<% else %>
+  $("#intrest_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @intrest}%>');
+<% end %>

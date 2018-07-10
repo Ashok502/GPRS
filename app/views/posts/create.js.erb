@@ -1,0 +1,8 @@
+<% if !@post.errors.present? %>
+  $("#posts").html('<%= escape_javascript render partial: "index" %>');
+  $("#post_body").val("");
+  $("#post_notification").hide();
+  $(".count").html("<%= @notifications %>");
+<% else %>
+  $("#post_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @post}%>');
+<% end %>

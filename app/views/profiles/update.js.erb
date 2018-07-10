@@ -1,0 +1,6 @@
+<% if !@user.errors.present? %>
+$("#ChangePassword").modal('hide');
+$("#post_notification").html("Successfully Updated the details").addClass("alert alert-success");
+<% else %>
+$("#change_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: current_user}%>');
+<% end %>
