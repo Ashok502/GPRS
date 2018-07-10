@@ -14,3 +14,7 @@ default: &default
 development:
   <<: *default
   database: gprs_development
+
+production:
+  <<: *default
+  database: gprs_production
