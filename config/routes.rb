@@ -9,6 +9,12 @@ Rails.application.routes.draw do
   	delete 'logout', to: 'devise/sessions#destroy'
   end
 
+  resources :conversations, only: [:create] do
+    member do
+      post :close
+    end
+  end
+
   resources :posts, :intrests, :ads, :profiles
 
   resources :profiles do

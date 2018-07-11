@@ -34,6 +34,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       
       t.string :username
       t.attachment :avatar
+      t.boolean :online, default: false
 
       t.timestamps null: false
     end

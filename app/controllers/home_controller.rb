@@ -4,9 +4,11 @@ class HomeController < ApplicationController
 		@post = Post.new
 		@intrest = Intrest.new
 		@ad = Ad.new
-		@messages = Message.order(created_at: :asc)
+		session[:conversations] ||= []
 		@notifications = current_user ? current_user.notifications.count : 0
 		@intrests = current_user ? current_user.intrests.all : 0
 		@ads = current_user ? current_user.ads.all : 0
+		@users = User.all.where.not(id: current_user)
+    @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
 	end
 end

@@ -16,5 +16,12 @@
 		<div id="ads">
 			<%= render partial: "/ads/index" %>
 		</div>
-	</div> 
+	</div>
+	<div class="well">
+		<ul>
+			<% @users.each do |user| %>
+			<li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
+			<% end %>
+		</ul>
+	</div>  
 </div>

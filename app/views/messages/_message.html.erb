@@ -1,8 +1,7 @@
-<ul class="message">
-	<li>
-		<div class="<%= cycle('left-chat', 'right-chat') %>">
-			<%= user_photo(message.user) %>
-			<p><%= message.body %><br><%= l message.created_at, format: :short %></p>
-		</div>
-	</li>
-</ul>
+<li>
+  <div class="row">
+    <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
+      <%= message.body %>
+    </div>
+  </div>
+</li>
