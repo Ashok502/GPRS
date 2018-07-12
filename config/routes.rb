@@ -19,9 +19,11 @@ Rails.application.routes.draw do
 
   resources :profiles do
   	member do
-  		put :update_profile
+  		put :update_profile, :accept
+      get :sent
   	end
   end
-
+  
+  get 'users/autocomplete_user_username'
   root :to => "home#index"
 end

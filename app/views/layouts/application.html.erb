@@ -20,10 +20,9 @@
 
       <div class="col-sm-6">
         <%= bootstrap_flash %>
+        <div id="users"></div>
         <%= render partial: "/layouts/search" %>
-        <div class="well">
-          <%= yield %>
-        </div>
+        <%= yield %>
       </div>
       <%= render partial: "/layouts/right_side" %>
     </div>

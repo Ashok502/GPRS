@@ -1,5 +1,6 @@
 <li>
   <div class="row">
+  	<%= image_tag message.user.avatar.url, class: "#{user.id == message.user_id ? 'pull-right' : 'pull-left'} search-logo" %>
     <div class="<%= user.id == message.user_id ? 'message-sent' : 'message-received' %>">
       <%= message.body %>
     </div>

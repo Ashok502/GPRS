@@ -1,23 +1,18 @@
 <div id="success"></div>
 <% if @posts.present? %>
 <% @posts.each do |post| %>
-<div class="row <%= cycle('even', 'odd') %>">
-	<div class="pull-right post-remove">
-		<%= current_user ? (link_to "<span class='fa fa-times fa-lg'></span>".html_safe, post_path(post), method: :delete, data: {confirm: "Are you sure"}, remote: true) : "" %>
+<div class="panel panel-default text-left">
+	<div class="panel-heading">
+		<%= image_tag post.user.avatar.url, class: "search-logo" %>
+		<%= post.user.username %>
+		<%= current_user ? (link_to "remove".html_safe, post_path(post), class: 'btn btn-danger btn-xs pull-right', id: "close_btn", method: :delete, data: {confirm: "Are you sure"}, remote: true) : "" %>
 	</div>
-	<div class="col-sm-3">
-		<div class="well">
-			<p><%= post.user.username %></p>
-			<%= image_tag post.user.avatar.url, class: "img-circle", alt: "Avatar" %>
+	<div class="panel-body">
+		<div class="row <%= cycle('even', 'odd') %>">
+			<div class="col-sm-12">	  
+				<p><%= post.body.html_safe %></p>
+			</div>
 		</div>
-	</div>
-	<div class="col-sm-9">	  
-		<div class="well">
-			<p><%= post.body.html_safe %></p>
-		</div>
-		<% if current_user %>
-
-		<% end %>
 	</div>
 </div>
 <% end %>

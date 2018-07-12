@@ -16,6 +16,8 @@ gem 'jquery-rails'
 gem 'whenever', require: false
 gem "font-awesome-rails"
 gem 'remotipart'
+gem 'rails-jquery-autocomplete'
+gem 'jquery-ui-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

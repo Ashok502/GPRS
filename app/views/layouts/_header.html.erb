@@ -9,21 +9,21 @@
       <%= link_to image_tag("/assets/logo.png"), root_path , class: "navbar-brand logo" %>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group input-group">
-          <input type="text" class="form-control header-search" placeholder="Search..">
-          <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-              <span class="fa fa-search"></span>
-            </button>
-          </span>        
-        </div>
-      </form> 
+      <%= form_tag(profiles_path, :method => "get", remote: true, class: "navbar-form navbar-left") do %>
+      <div class="form-group input-group">
+        <%= text_field_tag :search, params[:search], class: 'form-control header-search', placeholder: "Search", required: true, data: {autocomplete: users_autocomplete_user_username_path} %>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <span class="fa fa-search"></span>
+          </button>
+        </span>        
+      </div>
+      <% end %> 
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
           <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
             <i class="fa fa-bell fa-lg"></i>
-            <sup class="count"><%= @notifications %></sup>
+            <sup class="count"><%= @notifications.count %></sup>
           </a>
           <%= render partial: "/layouts/notifications" %>
         </li>

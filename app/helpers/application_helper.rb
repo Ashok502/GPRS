@@ -17,8 +17,4 @@ module ApplicationHelper
 	def user_photo(user)
 		image_tag user.avatar.url, class: "img-circle", alt: "Avatar"
 	end
-
-	def messageid(message, user)
-		(message.user == user) ? "message-right" : ""
-	end
 end

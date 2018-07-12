@@ -20,11 +20,14 @@
  	background: #ddd;
  }
 
+ ul, ol{padding-left: 0;}
+
+ .navbar-form{padding: 0;}
+
  .interests{
  	line-height: 25px;
  }
 
- .post-remove{margin: -10px;}
 
  #intrest_notification{font-size: 12px;}
 
@@ -32,6 +35,8 @@
  	width: 140px;
  	margin-right: 2px;
  }
+
+ #invite_btn, #close_btn{margin-top: 10px;}
 
  .count{
  	border: 1px solid red;
@@ -49,7 +54,10 @@
  	width: 40px;
  	height: 40px;
  	margin-top: -10px;
- 	margin-right: -10px;
+ 	margin-right: 10px; 	
+ }
+
+ .logo img, .img-circle, .chat-logo, .search-logo{
  	border-radius: 50%;
  	padding: 2px;
  	border: 1px solid lightgray;
@@ -57,17 +65,13 @@
 
  p{text-transform: capitalize;}
 
- .well{background: white;padding: 10px 19px;margin-bottom: 10px;}
+ .well{background: white;padding: 10px 10px;margin-bottom: 10px;}
 
  .well img{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
 
  .even, .odd{padding: 10px;margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;border-radius: 3px;}
 
  .even .col-sm-9 p, .odd .col-sm-9 p{text-align: left;font-size: 12px;text-transform: initial;}
-
- .header-search:focus{
- 	width: 300px !important;
- }
 
  .links{text-align: left;list-style: none;padding-left: 0;}
 

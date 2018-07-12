@@ -1,5 +1,8 @@
-<div class="col-sm-3 well">
-	<div class="well">
+<div class="col-sm-3">
+	<div class="panel panel-default text-center">
+		<div class="panel-heading">
+			New Advatage
+		</div>
 		<div class="panel-body">
 			<div id="intrest_notification"></div>
 			<%= form_for @ad, html: {class: 'form-inline'}, remote: true do |f| %>      
@@ -12,16 +15,26 @@
 			<% end %>
 		</div>
 	</div>
-	<div class="well">
-		<div id="ads">
-			<%= render partial: "/ads/index" %>
+	<div class="panel panel-default text-center">
+		<div class="panel-heading">
+			Advatages
+		</div>
+		<div class="panel-body">
+			<div id="ads">
+				<%= render partial: "/ads/index" %>
+			</div>
 		</div>
 	</div>
-	<div class="well">
-		<ul>
-			<% @users.each do |user| %>
-			<li><%= link_to user.email, conversations_path(user_id: user), remote: true, method: :post %></li>
-			<% end %>
-		</ul>
-	</div>  
+	<div class="panel panel-default text-center">
+		<div class="panel-heading">
+			Online Users
+		</div>
+		<div class="panel-body">
+			<ul>
+				<% @users.each do |user| %>
+				<li><i class="fa fa-dot-circle-o fa-lg <%= user.online == true ? 'active' : '' %>"></i> <%= link_to user.username, conversations_path(user_id: user), remote: true, method: :post %></li>
+				<% end %>
+			</ul>
+		</div> 
+	</div>
 </div>

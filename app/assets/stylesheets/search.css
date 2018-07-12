@@ -1,0 +1,15 @@
+#users ul{
+	padding-left: 0;
+}
+
+#users ul li{
+	padding: 5px;
+	border: 1px solid lightgrey;
+	margin-bottom: 5px;
+	border-radius: 5px;
+}
+
+.search-logo{
+ 	width: 40px;
+ 	height: 40px;
+ }

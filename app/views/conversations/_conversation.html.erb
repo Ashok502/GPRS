@@ -2,21 +2,25 @@
   <div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
     <div class="panel-heading toggle-window">
       <%= conversation.opposed_user(user).username %>
-      <%= link_to "x", close_conversation_path(conversation), class: "btn btn-default btn-xs pull-right", remote: true, method: :post %>
+      <%= link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, close_conversation_path(conversation), class: "pull-right", remote: true, method: :post %>
     </div>
 
     <div class="panel-body" style="display: none;">
       <div class="messages-list">
-        <ul>
+        <ul class="chat">
           <%= render 'conversations/conversation_content', messages: conversation.messages, user: user %>
         </ul>
       </div>
-      <form class="new_message form-inline">
-        <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
-        <input name="user_id" type="hidden" value="<%= user.id %>">
-        <input name="body" type="text" class="form-control"></textarea>
-        <input type="submit" class="btn btn-success pull-right" value="Send">
-      </form>
+      <form class="new_message">
+          <input name="conversation_id" type="hidden" value="<%= conversation.id %>">
+          <input name="user_id" type="hidden" value="<%= user.id %>">
+          <div class="input-group">
+            <input type="text" placeholder="Press Enter" name="body" class="form-control primary">
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="submit">Send</button>
+            </span>
+          </div>
+        </form>
     </div>
   </div>
 </li>

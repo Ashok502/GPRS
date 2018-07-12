@@ -1,0 +1,23 @@
+.ui-autocomplete {
+ 	position: absolute;
+ 	top: 100%;
+ 	z-index: 1000;
+ 	float: left;
+ 	margin: 2px 0 0 0;
+ 	list-style: none;
+ 	padding: 0;
+ 	background-color: #ffffff;
+ 	border-color: 1px solid #ccc;
+ 	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+ 	cursor: pointer;
+ }
+
+ .ui-autocomplete li{padding: 5px;border-bottom: 1px solid lightgrey;}
+
+ .ui-helper-hidden-accessible{display: none;}
+
+ .ui-widget-content .ui-state-focus {
+ 	color: #ffffff;
+ 	text-decoration: none;
+ 	background-color: #0088cc;
+ }

@@ -18,6 +18,8 @@
 //= require turbolinks
 //= require twitter/bootstrap
 //= require bootstrap-wysihtml5
+//= require jquery-ui
+//= require autocomplete-rails
 //= require_tree .
 
 $(function(){
