@@ -30,11 +30,6 @@
 
  #intrest_notification{font-size: 12px;}
 
- #intrest_name, #ad_image{
- 	width: 140px;
- 	margin-right: 2px;
- }
-
  #invite_btn{margin-top: 10px;}
 
  .count{
@@ -95,6 +90,14 @@
  	border-radius: 4px;	
  	width: 100%;
  }
+
+ #ad_image{
+ 	position: absolute;
+ 	height:0;
+ 	outline: none;
+ }
+
+ #new_ad label.btn{border-radius: 4px 0px 0px 4px;}
 
  footer {
  	background-color: #555;

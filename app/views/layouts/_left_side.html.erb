@@ -19,14 +19,13 @@
     </div>
     <div class="panel-body">
       <div id="intrest_notification"></div>
-      <%= form_for @intrest, html: {class: 'form-inline'}, remote: true do |f| %>      
-      <fieldset>
-        <div class="form-group mx-sm-3 mb-2">
-          <%= f.text_field :name, class: 'form-control pull-left', autocomplete: "off", placeholder: "Interests", required: true %>
-
-          <button type="submit" class="btn btn-default mb-2 pull-right"><span class="fa fa-envelope"></span></button>
-        </div>
-      </fieldset>
+      <%= form_for @intrest, remote: true do |f| %>      
+      <div class="input-group">
+        <%= f.text_field :name, class: 'form-control primary', autocomplete: "off", placeholder: "Interests", required: true %>
+        <span class="input-group-btn">
+          <button class="btn btn-primary" type="submit">Intrest</button>
+        </span>
+      </div>
       <% end %>
     </div>
   </div>
