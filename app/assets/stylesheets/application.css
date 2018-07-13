@@ -36,7 +36,7 @@
  	margin-right: 2px;
  }
 
- #invite_btn, #close_btn{margin-top: 10px;}
+ #invite_btn{margin-top: 10px;}
 
  .count{
  	border: 1px solid red;
@@ -53,8 +53,7 @@
  .logo img{
  	width: 40px;
  	height: 40px;
- 	margin-top: -10px;
- 	margin-right: 10px; 	
+ 	margin-top: -10px;	
  }
 
  .logo img, .img-circle, .chat-logo, .search-logo{
@@ -67,7 +66,7 @@
 
  .well{background: white;padding: 10px 10px;margin-bottom: 10px;}
 
- .well img{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
+ img{max-width: 100%;max-height: 100%;padding: 2px;border: 1px solid lightgray;}
 
  .even, .odd{padding: 10px;margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;border-radius: 3px;}
 

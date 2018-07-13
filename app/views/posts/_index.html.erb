@@ -5,7 +5,16 @@
 	<div class="panel-heading">
 		<%= image_tag post.user.avatar.url, class: "search-logo" %>
 		<%= post.user.username %>
-		<%= current_user ? (link_to "remove".html_safe, post_path(post), class: 'btn btn-danger btn-xs pull-right', id: "close_btn", method: :delete, data: {confirm: "Are you sure"}, remote: true) : "" %>
+		<ul class="nav navbar-nav navbar-right">
+			<li class="dropdown">
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+					<i class="fa fa-ellipsis-h fa-lg" aria-hidden="true"></i>
+				</a>
+				<ul class="dropdown-menu">
+					<li><%= current_user ? (link_to "remove".html_safe, post_path(post), method: :delete, data: {confirm: "Are you sure"}, remote: true) : "" %></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 	<div class="panel-body">
 		<div class="row <%= cycle('even', 'odd') %>">
