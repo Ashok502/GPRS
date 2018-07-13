@@ -1,1 +1,4 @@
-$(".request-notification").html('<%= @notification %>').addClass("alert alert-success");
+$("#success_notification").html('<%= @notification %>').addClass("alert alert-success");
+$("#request_<%= @friend.id %>").hide();
+$(".notification").removeClass("open");
+$(".count").html('<%= @notifications.count %>');

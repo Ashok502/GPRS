@@ -1,1 +1,2 @@
-$("#invite_notification").html("Invitation sent").addClass("alert alert-success");
+$("#success_notification").html("Invitation sent").addClass("alert alert-success");
+$(".invite_<%= @receiver.id %>").html("Invited").addClass("btn-danger").removeClass("btn-success");

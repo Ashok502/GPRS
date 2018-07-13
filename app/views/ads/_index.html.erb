@@ -1,11 +1,15 @@
-<% if @ads.present? %>
 <% @ads.each do |ad| %>
-<div class="thumbnail">
-	<%= image_tag ad.image.url, width: "400", height: "100" %>
-	<p><strong><%= filename(ad.image_file_name) %></strong></p>
-	<p><%= ad.created_at %></p>
-</div>  
-<% end %>
-<% else %>
-  <p>No Ads</p>
+<div class="panel panel-default" id="ad_<%= ad.id %>">
+	<div class="panel-heading text-left">
+		Advatages
+		<%= link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, ad_path(ad), method: :delete, class: "pull-right", data: {confirm: "Are you sure"}, remote: true %>
+	</div>
+	<div class="panel-body text-center">
+		<div class="thumbnail">
+			<%= image_tag ad.image.url, width: "400", height: "100" %>
+			<p><strong><%= filename(ad.image_file_name) %></strong></p>
+			<p><%= ad.created_at %></p>
+		</div> 
+	</div>
+</div>
 <% end %>

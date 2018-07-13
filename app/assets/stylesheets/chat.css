@@ -1,4 +1,4 @@
-.active{color: green;}
+.active{color: green;font-weight: bold;}
 
 .chat {
   list-style: none;

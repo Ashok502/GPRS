@@ -4,11 +4,15 @@ class IntrestsController < ApplicationController
 		@intrests = @user.intrests	
 		@intrest = Intrest.new(post_params.merge(user_id: @user.id))
 		if @intrest.user.limit_intrests? <= 10 && @intrest.save
-			respond_to do |format|
-				format.js
-			end
+			ajax_submit?
 		end
 	end
+
+	def destroy
+    @intrest = Intrest.find(params[:id])
+    @intrest.destroy 
+    ajax_submit?
+  end
 
 	private
 

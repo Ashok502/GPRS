@@ -1,6 +1,6 @@
 class HomeController < ApplicationController
 	def index
-		@posts = Post.all 
+		@posts = Post.page(params[:page]).per_page(3)
 		@post = Post.new
 		@intrest = Intrest.new
 		@ad = Ad.new

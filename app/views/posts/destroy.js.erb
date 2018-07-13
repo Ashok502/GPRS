@@ -1,3 +1,2 @@
-  $("#posts").html('<%= escape_javascript render partial: "index" %>');
-  $(".count").html("<%= @notifications %>");
-  $("#success").html("Successfully deleted the post").addClass("alert alert-success")
+$("#post_<%= @post.id %>").hide();
+$("#success_notification").html("Successfully deleted the post").addClass("alert alert-success");

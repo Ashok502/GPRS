@@ -3,7 +3,7 @@
 	<div class="notifications-wrapper">
 		<% @notifications.each do |user| %>
 		<a class="content" href="#">
-			<div class="notification-item">
+			<div class="notification-item" id="request_<%= user.id %>">
 				<h4 class="item-title">
 					<%= user.sender.username %>
 					<%= link_to "Reject", accept_profile_path(user, message: "Rejected the request", accept: 0), method: :put, remote: true, class: "btn btn-danger btn-xs pull-right" %> 

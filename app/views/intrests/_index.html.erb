@@ -1,5 +1,5 @@
 <p>
 	<% @intrests.each do |interest| %>
-	<span class="label <%= cycle('label-default', 'label-primary', 'label-success', 'label-info', 'label-warning', 'label-danger') %>"><%= interest.name %></span>
+	<span class="label <%= cycle('label-default', 'label-success', 'label-info', 'label-warning', 'label-danger') %>" id="intrest_<%= interest.id %>"><%= interest.name %>&nbsp;&nbsp;&nbsp;<%= link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, intrest_path(interest), method: :delete, data: {confirm: "Are you sure"}, remote: true, style: 'color: white;'%></span>
 	<% end %>
 </p>
