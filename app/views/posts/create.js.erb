@@ -1,7 +1,8 @@
 <% if !@post.errors.present? %>
-  $("#posts").html('<%= escape_javascript render partial: "index" %>');
-  $("#success_notification").html("Successfully created the post").addClass("alert alert-success");
-  $("#post_notification").hide();
+$("#posts").html('<%= escape_javascript render partial: "index" %>');
+$("#success_notification").html("Successfully created the post").addClass("alert alert-success");
+$("#post_notification").hide();
 <% else %>
-  $("#post_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @post}%>');
+$("#post_notification").show();
+$("#post_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @post}%>');
 <% end %>

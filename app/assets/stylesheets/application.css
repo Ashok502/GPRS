@@ -99,6 +99,11 @@
 
  #new_ad label.btn{border-radius: 4px 0px 0px 4px;}
 
+ hr{
+ 	margin-top: 10px;
+ 	margin-bottom: 5px;
+ }
+
  footer {
  	background-color: #555;
  	padding: 15px 15px;

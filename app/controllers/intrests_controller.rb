@@ -9,10 +9,10 @@ class IntrestsController < ApplicationController
 	end
 
 	def destroy
-    @intrest = Intrest.find(params[:id])
-    @intrest.destroy 
-    ajax_submit?
-  end
+		@intrest = Intrest.find(params[:id])
+		@intrest.destroy 
+		ajax_submit?
+	end
 
 	private
 
