@@ -6,11 +6,12 @@
       </div>
       <div class="panel-body">
         <div id="post_notification"></div>
+        <%= tinymce %>
         <%= form_for @post, remote: true do |f| %>
         <%= render partial: "/layouts/errors", locals: {resource: @post} %>
         <fieldset>
           <div class="form-group">
-            <%= f.text_area :body, class: 'wysihtml5 form-control' %>
+          <%= f.text_area :body, class: 'tinymce form-control', rows: 10, cols: 30 %>
           </div>
           <div class="form-group">
             <button type="submit" class="btn btn-default">POST</button>

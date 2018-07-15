@@ -1,0 +1,7 @@
+toolbar:
+  - bold italic | undo redo | image | link
+plugins:
+  - link
+  - uploadimage
+  - textcolor
+  - code

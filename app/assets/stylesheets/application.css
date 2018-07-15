@@ -13,7 +13,6 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
- *= require bootstrap-wysihtml5
  */
 
  body{
@@ -24,7 +23,7 @@
 
  ul, ol{padding-left: 0;}
 
- .navbar-form{padding: 0;}
+ .navbar-form, #posts .panel-body{padding: 0;}
 
  .interests{
  	line-height: 25px;
@@ -74,7 +73,7 @@
 
  .nav > li > a{padding-right: 5px;}
 
- .wysihtml5-toolbar .btn-default{font-size: 10px;}
+ .mce-container-body{font-size: 10px;}
 
  .error-message{
  	list-style: none;

@@ -17,20 +17,12 @@
 //= require activestorage
 //= require turbolinks
 //= require twitter/bootstrap
-//= require bootstrap-wysihtml5
+//= require tinymce
 //= require jquery-ui
 //= require autocomplete-rails
 //= require_tree .
 
 $(function(){
-	$('.wysihtml5').wysihtml5({
-		'toolbar': {
-			"blockquote": false,
-			"link": false,
-			"image": true
-		}
-	});
-
 	$('#Carousel').carousel();
 
 	$(document).on('click', '.toggle-window', function(e) {

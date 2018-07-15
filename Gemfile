@@ -11,7 +11,8 @@ gem 'devise'
 gem 'paperclip'
 
 gem "twitter-bootstrap-rails"
-gem "bootstrap-wysihtml5-rails"
+gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'jquery-rails'
 gem 'whenever', require: false
 gem "font-awesome-rails"
