@@ -5,7 +5,7 @@
 	<div class="panel-body">
 
 		<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-
+		<%= render partial: "/layouts/errors", locals: {resource: resource} %>
 		<fieldset>
 
 			<div class="form-group">
@@ -18,7 +18,7 @@
 			</div>
 
 			<div class="form-group">
-			<input type="submit" class="btn btn-lg btn-primary btn-block" value="Forgot">
+				<input type="submit" class="btn btn-lg btn-primary btn-block" value="Forgot">
 			</div>
 		</fieldset>
 		<% end %>

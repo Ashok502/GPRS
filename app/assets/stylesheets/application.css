@@ -20,6 +20,8 @@
  	background: #ddd;
  }
 
+ .jumbotron{margin-bottom: 0;background: #ddd;}
+
  ul, ol{padding-left: 0;}
 
  .navbar-form{padding: 0;}

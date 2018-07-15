@@ -20,17 +20,29 @@
 	</div>
 	<div id="ads">
 		<%= render partial: "/ads/index" %>
-	</div>	
+	</div>
+
 	<div class="panel panel-default text-center">
 		<div class="panel-heading">
-			Online Users
+			Friends
 		</div>
-		<div class="panel-body">
-			<ul>
+		<div class="panel-body">		
+			<div class="user-friend-list">
 				<% @users.each do |user| %>
-				<li><i class="fa fa-dot-circle-o fa-lg <%= user.online == true ? 'active' : '' %>"></i> <%= link_to user.username, conversations_path(user_id: user), remote: true, method: :post %></li>
+				<%= link_to user_photo(user), conversations_path(user_id: user), remote: true, method: :post, title: user.username %>
 				<% end %>
-			</ul>
+			</div>
 		</div> 
+	</div>
+
+	<div class="panel panel-default">
+		<div class="panel-heading">Social Media</div>
+		<div class="panel-body">
+			<i class="fa fa-facebook fa-2x"></i> 
+			<i class="fa fa-github fa-2x"></i> 
+			<i class="fa fa-twitter fa-2x"></i>
+			<i class="fa fa-pinterest fa-2x"></i> 
+			<i class="fa fa-google-plus fa-2x"></i>
+		</div>
 	</div>
 </div>

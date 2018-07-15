@@ -13,15 +13,15 @@
 </head>
 <body>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>                        
         </button>
-        <a class="navbar-brand" href="/">Logo</a>
+        <%= link_to image_tag("/assets/logo.png"), root_path , class: "navbar-brand logo" %>
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
@@ -32,35 +32,34 @@
     </div>
   </nav>
 
-  <div class="container text-center">    
+  <div class="container text-center"> 
+    <div class="jumbotron"></div>    
     <div class="row">
       <div class="col-sm-3">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            New Advatage
+            Good Sense of Humor
           </div>
           <div class="panel-body">
-            Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok 
+            It takes a lot of mental energy to come up with quick-witted quips that keep grins on others' faces. Those who have a good sense of humor tend to be more creative. And that's not the only cognitive benefit: One 2014 study found that laughter can also lead to a sharper short-term memory.
           </div>
         </div>
       </div>
-      <div class="col-sm-6">
+      <div class="col-sm-6 text-left">
         <%= bootstrap_flash %>
         <%= yield %>
       </div>
       <div class="col-sm-3">
         <div class="panel panel-default text-center">
           <div class="panel-heading">
-            New Advatage
+            Creative Thought
           </div>
           <div class="panel-body">
-            Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok Ashok 
+            As the old saying goes, "life's better when you're laughing" -- and no one knows that more than good-humored individuals.Those who have a good sense of humor not only see the value in making others laugh, but they prioritize laughter themselves.
           </div>
         </div>
       </div>
     </div>
   </div>
-  <%= render partial: "/layouts/footer" %>
-
 </body>
 </html>
