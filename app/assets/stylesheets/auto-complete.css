@@ -1,7 +1,7 @@
 .ui-autocomplete {
  	position: absolute;
  	top: 100%;
- 	z-index: 1000;
+ 	z-index: 1031;
  	float: left;
  	margin: 2px 0 0 0;
  	list-style: none;
