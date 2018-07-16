@@ -1,5 +1,6 @@
 <% if !@post.errors.present? %>
 $("#posts").html('<%= escape_javascript render partial: "index" %>');
+$(".user-posts").html("<%= current_user.posts.count %>");
 $("#success_notification").html("Successfully created the post").addClass("alert alert-success");
 $("#post_notification").hide();
 <% else %>

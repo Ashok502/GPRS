@@ -1,2 +1,3 @@
 $("#post_<%= @post.id %>").hide();
+$(".user-posts").html("<%= current_user.posts.count %>");
 $("#success_notification").html("Successfully deleted the post").addClass("alert alert-success");
