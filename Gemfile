@@ -20,6 +20,7 @@ gem 'remotipart'
 gem 'rails-jquery-autocomplete'
 gem 'jquery-ui-rails'
 gem 'will_paginate'
+gem 'redis'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
