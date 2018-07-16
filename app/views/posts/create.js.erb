@@ -3,6 +3,8 @@ $("#posts").html('<%= escape_javascript render partial: "index" %>');
 $(".user-posts").html("<%= current_user.posts.count %>");
 $("#success_notification").html("Successfully created the post").addClass("alert alert-success");
 $("#post_notification").hide();
+var tinymce_editor_id = 'post_body'; 
+tinymce.get(tinymce_editor_id).setContent('');
 <% else %>
 $("#post_notification").show();
 $("#post_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @post}%>');
