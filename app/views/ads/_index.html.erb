@@ -6,7 +6,7 @@
 	</div>
 	<div class="panel-body text-center">
 		<div class="thumbnail">
-			<%= image_tag ad.image.url, width: "400", height: "100" %>
+			<%= image_tag ad.image.url(:original), width: "400", height: "100" %>
 			<p><strong><%= filename(ad.image_file_name) %></strong></p>
 			<p><%= ad.created_at %></p>
 		</div> 

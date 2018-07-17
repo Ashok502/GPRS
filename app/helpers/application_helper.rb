@@ -15,6 +15,6 @@ module ApplicationHelper
 	end
 
 	def user_photo(user)
-		image_tag user.avatar.url, class: "img-circle", alt: "Avatar"
+		image_tag user.avatar.url(:original), class: "img-circle", alt: "Avatar"
 	end
 end
