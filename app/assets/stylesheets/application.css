@@ -92,10 +92,8 @@
  	width: 100%;
  }
 
- #ad_image{
- 	position: absolute;
- 	height:0;
- 	outline: none;
+ #new_ad input[type="file"], .edit_user input[type="file"]{
+ 	display: none;
  }
 
  #new_ad label.btn{border-radius: 4px 0px 0px 4px;}

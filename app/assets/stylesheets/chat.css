@@ -30,7 +30,11 @@ ul li{
 .chatbox .panel{margin-bottom: 0;}
 
 .chatbox{
-  top: auto;bottom: 0px;position: absolute;right: 0px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  font-size: .9em;
 }
 
 .chatbox .fa-times-circle{color: #000;}
@@ -50,7 +54,7 @@ ul li{
 .chat-logo{
   width: 45px;
   height: 45px;
- }
+}
 
 .chat .pull-right{margin-right: 15px;}
 
