@@ -60,20 +60,20 @@ ul li{
 
 .chat .pull-left{margin-left: 15px;}
 
-.message-sent {
-  position: relative;
-  background-color: #D9EDF7;
-  border-color: #BCE8F1;
+.message-sent, .message-received{
   margin: 5px 10px;
-  padding: 10px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+.message-sent {
+  border-color: #BCE8F1;
   float: right;
 }
 
 .message-received {
-  background-color: #F1F0F0;
   border-color: #EEEEEE;
-  margin: 5px 10px;
-  padding: 10px;
   float: left;
 }
 
