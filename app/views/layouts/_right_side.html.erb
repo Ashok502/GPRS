@@ -1,6 +1,18 @@
 <div class="col-sm-3">
 	<div class="panel panel-default text-center">
 		<div class="panel-heading">
+			Friends
+		</div>
+		<div class="panel-body">		
+			<div class="user-friend-list">
+				<% @users.each do |user| %>
+				<%= link_to user_photo(user), conversations_path(user_id: user), remote: true, method: :post, title: user.username %>
+				<% end %>
+			</div>
+		</div> 
+	</div>
+	<div class="panel panel-default text-center">
+		<div class="panel-heading">
 			New Advatage
 		</div>
 		<div class="panel-body">
@@ -22,18 +34,6 @@
 		<%= render partial: "/ads/index" %>
 	</div>
 
-	<div class="panel panel-default text-center">
-		<div class="panel-heading">
-			Friends
-		</div>
-		<div class="panel-body">		
-			<div class="user-friend-list">
-				<% @users.each do |user| %>
-				<%= link_to user_photo(user), conversations_path(user_id: user), remote: true, method: :post, title: user.username %>
-				<% end %>
-			</div>
-		</div> 
-	</div>
 
 	<div class="panel panel-default">
 		<div class="panel-heading">Social Media</div>
