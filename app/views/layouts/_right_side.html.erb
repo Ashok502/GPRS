@@ -5,9 +5,7 @@
 		</div>
 		<div class="panel-body">		
 			<div class="user-friend-list">
-				<% @users.each do |user| %>
-				<%= link_to user_photo(user), conversations_path(user_id: user), remote: true, method: :post, title: user.username %>
-				<% end %>
+				<%= render partial: '/profiles/user' %>
 			</div>
 		</div> 
 	</div>

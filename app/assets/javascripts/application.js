@@ -21,14 +21,16 @@
 //= require jquery-ui
 //= require autocomplete-rails
 //= require jquery.minicolors
+//= require dropzone
+//= require fancybox
 //= require_tree .
 
 $(function(){
-	$('#Carousel').carousel();
+	$('#Carousel').carousel();  
 
   $('#user_color').minicolors()
 
-	$(document).on('click', '.toggle-window', function(e) {
+  $(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();
     var panel = $(this).parent().parent();
     var messages_list = panel.find('.messages-list');
@@ -41,4 +43,25 @@ $(function(){
       messages_list.scrollTop(height);
     }
   });
+
+  $('.carousel[data-type="multi"] .item').each(function(){
+    var next = $(this).next();
+    if (!next.length) {
+      next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+
+    for (var i=0;i<4;i++) {
+      next=next.next();
+      if (!next.length) {
+        next = $(this).siblings(':first');
+      }
+      
+      next.children(':first-child').clone().appendTo($(this));
+    }
+  });
+});
+
+$(document).ready(function(){
+  $(".fancybox").fancybox();
 });

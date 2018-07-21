@@ -9,13 +9,13 @@ class User < ApplicationRecord
   :content_type => [ 'image/jpeg','image/jpg', 'image/png', 'image/gif','image/bmp', 'image/x-png', 'image/pjpeg' ]
 
   has_many :posts, dependent: :destroy
-  has_many :notifications, dependent: :destroy
   has_many :intrests, dependent: :destroy
   has_many :ads, dependent: :destroy
   has_many :messages, dependent: :destroy
   has_many :sent_requests, foreign_key: :sender_id, class_name: "Friend"
   has_many :received_requests, foreign_key: :receiver_id, class_name: "Friend"
   has_many :comments, dependent: :destroy
+  has_many :galleries, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, on: :update
 
@@ -25,6 +25,10 @@ class User < ApplicationRecord
 
   def limit_intrests?
   	self.intrests.count
+  end
+
+  def online?
+    updated_at > 10.minutes.ago
   end
 
   def limit_ads?

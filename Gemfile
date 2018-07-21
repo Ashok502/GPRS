@@ -22,6 +22,8 @@ gem 'jquery-ui-rails'
 gem 'will_paginate'
 gem 'aws-sdk'
 gem 'jquery-minicolors-rails'
+gem 'dropzonejs-rails'
+gem 'fancybox-rails'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

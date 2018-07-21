@@ -5,11 +5,12 @@ class HomeController < ApplicationController
 		@intrest = Intrest.new
 		@comment = Comment.new
 		@ad = Ad.new
+		@gallery = Gallery.new
+		@galleries = current_user ? current_user.galleries : 0
 		session[:conversations] ||= []
-		@notifications = current_user ? current_user.received_requests.where(accept: 1) : 0
 		@intrests = current_user ? current_user.intrests.all : 0
 		@ads = current_user ? current_user.ads.all : 0
-		@users = User.where.not(id: current_user)
+		@users = User.where.not(id: current_user).order("updated_at desc")
 		@conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
 	end
 end

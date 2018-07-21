@@ -5,7 +5,6 @@ class PostsController < ApplicationController
   	@posts = Post.all
   	@post = Post.new(post_params.merge(user_id: @user.id))
   	if @post.save
-      Notification.create(:post_id => @post.id, :user_id => @user.id)
   		ajax_submit?
   	end
   end

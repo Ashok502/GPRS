@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_21_095313) do
+ActiveRecord::Schema.define(version: 2018_07_21_153005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 2018_07_21_095313) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "galleries", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_galleries_on_user_id"
+  end
+
   create_table "images", force: :cascade do |t|
     t.string "alt", default: ""
     t.string "hint", default: ""
@@ -81,16 +92,6 @@ ActiveRecord::Schema.define(version: 2018_07_21_095313) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
-  end
-
-  create_table "notifications", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "post_id"
-    t.boolean "read_at", default: true
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_notifications_on_post_id"
-    t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|

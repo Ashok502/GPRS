@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :intrests, :ads, :profiles
+  resources :intrests, :ads, :profiles, :galleries
 
   resources :profiles do
   	member do

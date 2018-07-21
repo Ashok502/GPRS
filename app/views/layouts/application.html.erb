@@ -23,18 +23,23 @@
       <div class="col-sm-6">
         <%= bootstrap_flash %>
         <div id="users"></div>
+        <%= render partial: '/galleries/gallery' %>
         <%= render partial: "/layouts/search" %>
         <%= yield %>
       </div>
       <%= render partial: "/layouts/right_side" %>
     </div>
   </div>  
+  <input type="hidden" value="<%= current_user.id %>" id="current_user_id" />
   <%= render partial: "/layouts/chat" %>
   <div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-hidden="true">
     <%= render partial: "/profiles/password" %>
   </div>
   <div class="modal fade" id="ChangeProfile" tabindex="-1" role="dialog" aria-hidden="true">
     <%= render partial: "/profiles/profile" %>
+  </div>
+  <div class="modal fade" id="Gallery" tabindex="-1" role="dialog" aria-hidden="true">
+    <%= render partial: "/galleries/new" %>
   </div>
 </body>
 </html>

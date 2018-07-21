@@ -1,0 +1,3 @@
+<% @users.each do |user| %>
+<%= link_to user_photo(user), conversations_path(user_id: user), remote: true, method: :post, title: user.username, class: "#{user.online? ? 'online' : 'offline'}" %>
+<% end %>

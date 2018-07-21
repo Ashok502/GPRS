@@ -14,6 +14,8 @@
  *= require_self
  *= require font-awesome
  *= require jquery.minicolors
+ *= require dropzone/dropzone
+ *= require fancybox
  */
 
  body{
