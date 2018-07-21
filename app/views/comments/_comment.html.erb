@@ -1,0 +1,12 @@
+  <div id="comments">Comments</div>
+  <hr />
+  <% comments.each do |comment| %>
+  <div id="comments" class="comment-<%= comment.id %>">
+    <h4 class="item-title">
+      <%= image_tag(comment.user.avatar.url, class: 'comment-logo') %>
+      <%= comment.comment %>
+      <%= (current_user and comment.user_id == current_user.id) ? (link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, post_comment_path(comment.post_id, comment), method: :delete, class: "pull-right", data: {confirm: "Are you sure"}, remote: true) : "" %>
+    </h4>
+    <hr />
+  </div>
+  <% end %>

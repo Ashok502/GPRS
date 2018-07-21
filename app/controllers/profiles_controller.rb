@@ -37,7 +37,7 @@ class ProfilesController < ApplicationController
 	def accept
 		@friend = Friend.find(params[:id])
 		@notification = params[:message]
-		@notifications = current_user ? current_user.received_requests.where("accept = 1") : 0
+		@notifications = current_user ? current_user.received_requests.where(accept: 1) : 0
 		@friend.update(accept: params[:accept])
 		ajax_submit?
 	end

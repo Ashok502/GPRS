@@ -15,6 +15,7 @@ class User < ApplicationRecord
   has_many :messages, dependent: :destroy
   has_many :sent_requests, foreign_key: :sender_id, class_name: "Friend"
   has_many :received_requests, foreign_key: :receiver_id, class_name: "Friend"
+  has_many :comments, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, on: :update
 
@@ -22,8 +23,6 @@ class User < ApplicationRecord
 
   scope :search, -> (search, user) { where("username ilike (?) AND id NOT IN (?)", "#{search}%", user)}
 
-  after_update_commit {AppearanceBroadcastJob.perform_later self}
-  
   def limit_intrests?
   	self.intrests.count
   end

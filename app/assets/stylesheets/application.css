@@ -61,7 +61,7 @@
 
  .well{background: white;padding: 10px 10px;margin-bottom: 10px;}
 
- .even, .odd{padding: 10px;margin-bottom: 5px;border-bottom: 1px solid #e3e3e3;border-radius: 3px;}
+ .even, .odd{padding: 10px;margin-bottom: 5px;border-radius: 3px;}
 
  .even .col-sm-9 p, .odd .col-sm-9 p{text-align: left;font-size: 12px;text-transform: initial;}
 
@@ -98,10 +98,22 @@
 
  #new_ad label.btn{border-radius: 4px 0px 0px 4px;}
 
+ #new_comment{padding: 5px 10px 10px 10px;}
+
+ #comments{padding: 0 10px;margin-bottom: -5px;}
+
+ #posts .panel-body{margin-bottom: -20px;margin-top: -10px;}
+
+ .comment-logo{width: 20px; border-radius: 50%;}
+
+ .post-form .panel-body{padding-bottom: 0;}
+
  hr{
  	margin-top: 10px;
  	margin-bottom: 5px;
  }
+
+ a{outline: none;}
 
  footer {
  	background-color: #555;

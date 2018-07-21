@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :posts, :intrests, :ads, :profiles
+  resources :posts do
+    resources :comments
+  end
+  
+  resources :intrests, :ads, :profiles
 
   resources :profiles do
   	member do

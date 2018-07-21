@@ -20,6 +20,8 @@ ul li{
   list-style: none;
 }
 
+ul{margin-bottom: 0;}
+
 .chatbox .messages-list {
   overflow-y: scroll;
   height: 250px;
