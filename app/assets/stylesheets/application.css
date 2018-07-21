@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require font-awesome
+ *= require jquery.minicolors
  */
 
  body{
@@ -107,6 +108,8 @@
  .comment-logo{width: 20px; border-radius: 50%;}
 
  .post-form .panel-body{padding-bottom: 0;}
+
+ #user_color{height: 30px;}
 
  hr{
  	margin-top: 10px;

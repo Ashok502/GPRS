@@ -3,6 +3,7 @@ $("#ChangeProfile").modal('hide');
 $(".user-photo").html('<%= user_photo(@user) %>');
 $(".username").html('<%= @user.username %>');
 $(".useremail").html('<%= @user.email %>');
+$(".user-details").css('background', '<%= @user.color %>');
 $("#success_notification").html("Successfully Updated the details").addClass("alert alert-success");
 <% else %>
 $("#profile_notification").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: current_user}%>');

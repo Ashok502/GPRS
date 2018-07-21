@@ -20,10 +20,13 @@
 //= require tinymce
 //= require jquery-ui
 //= require autocomplete-rails
+//= require jquery.minicolors
 //= require_tree .
 
 $(function(){
 	$('#Carousel').carousel();
+
+  $('#user_color').minicolors()
 
 	$(document).on('click', '.toggle-window', function(e) {
     e.preventDefault();
