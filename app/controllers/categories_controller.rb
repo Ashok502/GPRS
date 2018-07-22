@@ -13,7 +13,7 @@ class CategoriesController < ApplicationController
 
 	def create
 		@category = Category.new(new_params.merge(user_id: current_user.id))
-		@categories = current_user.categories
+		@categories = current_user.categories.page(params[:category_page]).per_page(5)
 		if @category.save
 			ajax_submit?
 		end
@@ -23,7 +23,7 @@ class CategoriesController < ApplicationController
 	end
 
 	def update
-		@categories = current_user.categories
+		@categories = current_user.categories.page(params[:category_page]).per_page(5)
 		if @category.update_attributes(new_params)
 			ajax_submit?
 		end
