@@ -20,7 +20,8 @@
       </div>
       <% end %> 
       <ul class="nav navbar-nav navbar-left">
-        <li><%= link_to "Profile", "#" %></li>
+        <li><%= link_to "Categories", categories_path, remote: true %></li>
+        <li><%= link_to "Products", products_path, remote: true %></li>
         <li><%= link_to "Gallery", "#", 'data-toggle' => 'modal', 'data-target' => "#Gallery" %></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">

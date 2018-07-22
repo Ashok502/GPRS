@@ -16,6 +16,8 @@ class User < ApplicationRecord
   has_many :received_requests, foreign_key: :receiver_id, class_name: "Friend"
   has_many :comments, dependent: :destroy
   has_many :galleries, dependent: :destroy
+  has_many :categories, dependent: :destroy
+  has_many :products, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, on: :update
 
@@ -25,6 +27,10 @@ class User < ApplicationRecord
 
   def limit_intrests?
   	self.intrests.count
+  end
+
+  def limit_galleries?
+    self.galleries.count
   end
 
   def online?

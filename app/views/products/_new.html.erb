@@ -1,0 +1,32 @@
+<%= nested_form_for @product, remote: true do |f| %>      
+<div class="form-group">
+	<%= f.select :category_id, options_for_select([["Category",nil]]+Category.all.map{|a| [a.name, a.id]}, :selected => f.object.category_id),{}, :class => 'form-control' %>
+</div>
+<div class="form-group">
+	<%= f.text_field :title, :class => 'form-control', placeholder: "Title" %>
+</div>
+<div class="form-group">
+	<%= f.number_field :price, :class => 'form-control', placeholder: "Price" %>
+</div>
+<div class="form-group">
+	<%= f.number_field :quantity, :class => 'form-control', placeholder: "Quantity" %>
+</div>
+<div class="form-group">
+	<%= f.select :size, options_for_select([["Size",nil],['Small','small'],["Medium","mediun"],["Large",'large'],["X-large","xlarge"]], :selected => f.object.size),{}, :class => 'form-control' %>
+</div>
+<div class="form-group">
+	<%= f.text_area :description, class: 'form-control', rows: 5, cols: 30, placeholder: "Description" %>
+</div>
+<div class="form-group">
+	<%= f.fields_for :logos do |builder| %>      
+	<%= builder.file_field :logo %>
+	<br>
+	<%= builder.link_to_remove "Remove".html_safe, :class => 'btn btn-danger btn-xs pull-right', style: 'margin-top: -45px;' %>      
+	<% end %>
+	<%= f.link_to_add "Add+".html_safe, :logos, :class => 'btn btn-success btn-xs' %>
+</div>
+<div class="form-group">
+	<%= f.submit "Save", :class => 'btn btn-primary' %>
+</div>
+<% end %>
+<br />

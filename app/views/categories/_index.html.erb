@@ -1,0 +1,34 @@
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    Categories
+    <%= link_to "New Category", new_category_path, remote: true, class: 'btn btn-primary btn-xs pull-right' %>
+  </div>
+  <div class="panel-body">
+    <div id="category_errors"></div>
+    <div id="category"></div>
+    <table class="table table-bordered text-left">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Products</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @categories.each do |category| %>
+        <tr id="category_<%= category.id %>">
+          <td><%= category.name %></td>
+          <td><%= category.products.count %></td>
+          <td>
+            <%= link_to "edit", edit_category_path(category), remote: true, class: 'btn btn-warning btn-xs' %>
+            <%= link_to "delete", category_path(category), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pull-right">
+      <%= will_paginate @categories, page_links: false, param_name: 'category_page', previous_label: "Prev", next_label: "Next" %>
+    </div>
+  </div>
+</div>

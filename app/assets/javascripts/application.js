@@ -23,6 +23,7 @@
 //= require jquery.minicolors
 //= require dropzone
 //= require fancybox
+//= require jquery_nested_form
 //= require_tree .
 
 $(function(){
@@ -64,4 +65,11 @@ $(function(){
 
 $(document).ready(function(){
   $(".fancybox").fancybox();
+
+  Dropzone.autoDiscover = true;
+  $("#new_gallery").dropzone({
+    maxFilesize: 20,
+    paramName: "gallery[image]",
+    addRemoveLinks: true
+  });
 });

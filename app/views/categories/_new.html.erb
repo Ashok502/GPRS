@@ -1,0 +1,9 @@
+<%= form_for @category, remote: true do |f| %>      
+<div class="input-group">
+	<%= f.text_field :name, class: 'form-control primary', autocomplete: "off", placeholder: "Name", required: true %>
+	<span class="input-group-btn">
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</span>
+</div>
+<% end %>
+<br />

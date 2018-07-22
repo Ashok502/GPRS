@@ -24,6 +24,7 @@ gem 'aws-sdk'
 gem 'jquery-minicolors-rails'
 gem 'dropzonejs-rails'
 gem 'fancybox-rails'
+gem "nested_form"
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
