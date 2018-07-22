@@ -1,0 +1,3 @@
+$(".dropdown-cart").html('<%= escape_javascript render partial: "/layouts/cart" %>');
+$(".cart-count").html("<%= @cart.line_items.count %>")
+$(".total-cart").addClass('open');

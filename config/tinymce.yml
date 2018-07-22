@@ -1,7 +1,10 @@
 toolbar:
-  - bold italic | undo redo | image | link
+  - insertfile undo redo | styleselect | outdent indent | link image | emoticons | forecolor backcolor | media | table
 plugins:
   - link
   - uploadimage
   - textcolor
   - code
+  - emoticons
+  - table
+  - media

@@ -6,12 +6,12 @@
   <div class="panel-body">
     <div id="category_errors"></div>
     <div id="category"></div>
-    <table class="table table-bordered text-left">
+    <table class="table table-bordered text-center">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Products</th>
-          <th>Actions</th>
+          <th class="text-center">Name</th>
+          <th class="text-center">Products</th>
+          <th class="text-center">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -28,7 +28,7 @@
       </tbody>
     </table>
     <div class="pull-right">
-      <%= will_paginate @categories, page_links: false, param_name: 'category_page', previous_label: "Prev", next_label: "Next" %>
+      <%= will_paginate @categories, param_name: 'category_page', page_links: false, previous_label: "❮", next_label: "❯" %>
     </div>
   </div>
 </div>

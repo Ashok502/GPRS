@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :get_product, only: ['edit', 'update', 'destroy']
+  before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart']
 	
 	def index
 		@products = current_user.products.page(params[:product_page]).per_page(5)
@@ -24,6 +24,19 @@ class ProductsController < ApplicationController
 	def edit
 	end
 
+	def add_to_cart
+		@cart = current_cart
+		@cart.update_attribute(:created_at, Time.now)
+		session[:cart] = @cart.id
+		@line_item = LineItem.find_by_product_id_and_cart_id(@product.id,@cart.id)
+		if @line_item.present?
+			@line_item.update(quantity: params[:quantity])
+		else
+			LineItem.create(product_id: @product.id, cart_id: @cart.id, unit_price: @product.price, quantity: params[:quantity])
+		end
+		ajax_submit?
+	end
+
 	def update
 		@products = current_user.products.page(params[:product_page]).per_page(5)
 		if @product.update_attributes(new_params)
@@ -33,6 +46,12 @@ class ProductsController < ApplicationController
 
 	def destroy
 		@product.destroy
+		ajax_submit?
+	end
+
+	def item_delete
+		@item = LineItem.find(params[:id])
+		@item.destroy
 		ajax_submit?
 	end
 

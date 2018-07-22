@@ -6,14 +6,14 @@
   <div class="panel-body">
     <div id="product_errors"></div>
     <div id="product"></div>
-    <table class="table table-bordered text-left">
+    <table class="table table-bordered text-center">
       <thead>
         <tr>
-          <th>Title</th>
-          <th>Category</th>
-          <th>Price</th>
-          <th>Quantity</th>
-          <th>Actions</th>
+          <th class="text-center">Title</th>
+          <th class="text-center">Category</th>
+          <th class="text-center">Price</th>
+          <th class="text-center">Quantity</th>
+          <th class="text-center">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -21,7 +21,7 @@
         <tr id="product_<%= product.id %>">
           <td><%= product.title %></td>
           <td><%= product.category.name %></td>
-          <td><%= product.price %></td>
+          <td><%= number_to_currency(product.price) %></td>
           <td><%= product.quantity %></td>
           <td>
             <%= link_to "edit", edit_product_path(product), remote: true, class: 'btn btn-warning btn-xs' %>
@@ -32,7 +32,7 @@
       </tbody>
     </table>
     <div class="pull-right">
-      <%= will_paginate @products, page_links: false, param_name: 'product_page', previous_label: "Prev", next_label: "Next" %>
+      <%= will_paginate @products, page_links: false, param_name: 'product_page', previous_label: "❮", next_label: "❯" %>
     </div>
   </div>
 </div>

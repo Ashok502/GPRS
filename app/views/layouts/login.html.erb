@@ -12,7 +12,6 @@
   <%= javascript_include_tag "application" %>
 </head>
 <body>
-
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
@@ -25,6 +24,15 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown total-cart">
+            <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+              <i class="fa fa-shopping-cart fa-lg"></i>
+              <sup class="cart-count"><%= current_cart.line_items.count %></sup>
+            </a>
+            <ul class="dropdown-menu dropdown-cart" role="menu">
+              <%= render partial: '/layouts/cart' %>
+            </ul>
+          </li>
           <li><%= link_to "Login", login_path %></li>
           <li><%= link_to "Register", signup_path %></li>
         </ul>             
@@ -32,34 +40,10 @@
     </div>
   </nav>
 
-  <div class="container text-center"> 
-    <div class="jumbotron"></div>    
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="panel panel-default text-center">
-          <div class="panel-heading">
-            Good Sense of Humor
-          </div>
-          <div class="panel-body">
-            It takes a lot of mental energy to come up with quick-witted quips that keep grins on others' faces. Those who have a good sense of humor tend to be more creative. And that's not the only cognitive benefit: One 2014 study found that laughter can also lead to a sharper short-term memory.
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-6 text-left">
-        <%= bootstrap_flash %>
-        <%= yield %>
-      </div>
-      <div class="col-sm-3">
-        <div class="panel panel-default text-center">
-          <div class="panel-heading">
-            Creative Thought
-          </div>
-          <div class="panel-body">
-            As the old saying goes, "life's better when you're laughing" -- and no one knows that more than good-humored individuals.Those who have a good sense of humor not only see the value in making others laugh, but they prioritize laughter themselves.
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container">
+    <div class="jumbotron"></div>
+    <%= bootstrap_flash %>
+    <%= yield %>
   </div>
 </body>
 </html>

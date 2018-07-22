@@ -32,6 +32,15 @@
           <%#= render partial: "/layouts/notifications" %>
         </li>
         <li class="dropdown">
+          <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
+            <i class="fa fa-shopping-cart fa-lg"></i>
+            <sup class="cart-count"><%= current_cart.line_items.count %></sup>
+          </a>
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+            <%= render partial: '/layouts/cart' %>
+          </ul>
+        </li>
+        <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="fa fa-user fa-lg"></span> My Account <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><%= link_to "#{icon} Settings".html_safe, "#", 'data-toggle' => 'modal', 'data-target' => '#ChangeProfile'%></li>

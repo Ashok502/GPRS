@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   layout :layout?
   include ApplicationHelper
   helper :all
+  helper_method :current_cart
   before_action :user_status?, if: proc { user_signed_in? }
   before_action :all_actions, if: proc { user_signed_in? }
 
@@ -21,17 +22,29 @@ class ApplicationController < ActionController::Base
   	end
   end
 
+  def current_cart(cart_exist=false)
+    cart = Cart.find(session[:cart]) if session[:cart]
+    unless cart
+      if cart_exist
+        cart = Cart.create
+      else
+        cart = Cart.new
+      end
+    end
+    cart
+  end
+
   def all_actions
-    @posts = Post.page(params[:page]).per_page(3)
     @post = Post.new
     @intrest = Intrest.new
     @comment = Comment.new
     @ad = Ad.new
     @gallery = Gallery.new
-    @galleries = current_user ? current_user.galleries : 0
     session[:conversations] ||= []
+    @posts = Post.order("created_at desc").page(params[:page]).per_page(3)    
+    @galleries = current_user ? current_user.galleries : 0
     @intrests = current_user ? current_user.intrests.all : 0
-    @ads = current_user ? current_user.ads.all : 0
+    @ads = current_user ? current_user.ads.order("created_at desc") : 0
     @users = User.where.not(id: current_user).order("updated_at desc")
     @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
   end

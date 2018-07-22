@@ -17,14 +17,11 @@
 
   <div class="container text-center">
     <div class="jumbotron"></div>    
-    <div id="success_notification" class="alert-success"></div>
     <div class="row">
       <%= render partial: "/layouts/left_side" %>
       <div class="col-sm-6">
-        <%= bootstrap_flash %>
-        <div id="users"></div>
-        <%= render partial: '/galleries/gallery' %>
-        <%= render partial: "/layouts/search" %>
+        <div id="success_notification" class="alert-success"></div>
+        <div id="users"></div>        
         <%= yield %>
       </div>
       <%= render partial: "/layouts/right_side" %>

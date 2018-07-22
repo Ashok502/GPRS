@@ -20,7 +20,14 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :intrests, :ads, :profiles, :galleries, :categories, :products
+  resources :intrests, :ads, :profiles, :galleries, :categories
+
+  resources :products do
+    member do
+      get :add_to_cart
+      delete :item_delete
+    end
+  end
 
   resources :profiles do
   	member do

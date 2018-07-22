@@ -36,7 +36,7 @@
 
  #invite_btn{margin-top: 10px;}
 
- .count{
+ .count, .cart-count{
  	border: 1px solid red;
  	color: white;
  	border-radius: 50%;
@@ -54,7 +54,7 @@
  	margin-top: -10px;	
  }
 
- img{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
+ img, iframe{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
 
  .logo img, .img-circle, .chat-logo, .search-logo{
  	border-radius: 50%;
@@ -112,6 +112,20 @@
  .post-form .panel-body{padding-bottom: 0;}
 
  #user_color{height: 30px;}
+
+.pagination .next_page, .pagination .previous_page {
+  padding: 5px 8px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+}
+
+.pagination{margin: -5px 0 0 0;border: none;}
+
+#line_items #quantity{
+	height: 22px;
+    width: 50px;
+}
 
  hr{
  	margin-top: 10px;

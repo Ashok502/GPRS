@@ -1,0 +1,45 @@
+<li style="padding: 0 10px;">
+  <table class="table table-bordered text-left">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Full Price</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% current_cart.line_items.each do |item| %>
+      <tr id="line_items">
+        <td><%= item.product.title %></td>
+        <td><%= number_to_currency(item.unit_price) %></td>
+        <td>
+          <%= form_tag add_to_cart_product_path(item.product), method: :get, remote: true do %>    
+          <div class="input-group">
+            <%= text_field_tag :quantity, item.quantity, min: 1, max: 20, class: 'form-control primary', autocomplete: "off", placeholder: "Qty", required: true %>
+            <span class="input-group-btn">
+              <button class="btn btn-primary btn-xs" type="submit">Edit</button>
+            </span>
+          </div>
+          <% end %>
+        </td>
+        <td><%= number_to_currency(item.full_price) %></td>
+        <td class="text-center">
+          <%= link_to "X", item_delete_product_path(item), method: :delete, data: {confirm: "Sure"}, remote: true , class: "btn btn-danger btn-xs" %>
+        </td>
+      </tr>
+      <% end %>
+      <% if current_cart.line_items.present? %>
+      <tr>
+        <td colspan="2"></td>
+        <td>Total</td>
+        <td>
+          <%= number_to_currency(current_cart.total) %>
+        </td>
+        <td><%= link_to "Checkout", "", class: "btn btn-primary btn-xs" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</li>
