@@ -25,6 +25,7 @@
           <td><%= product.quantity %></td>
           <td>
             <%= link_to "edit", edit_product_path(product), remote: true, class: 'btn btn-warning btn-xs' %>
+            <%= link_to "Add to Cart", add_to_cart_product_path(product, quantity: 1), remote: true, class: 'btn btn-default btn-xs' %>
             <%= link_to "delete", product_path(product), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
           </td>
         </tr>
