@@ -1,11 +1,24 @@
+<% images = ["/assets/slider1.jpg", "/assets/slider2.jpg", "/assets/slider3.jpg"] %>
+<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+  <div class="carousel-inner">
+    <% images.each_with_index do |image, index| %>
+    <div class="<%= index == 0 ? 'active' : '' %> item">
+      <%= image_tag image %>
+    </div>
+    <% end %>
+  </div>
+</div>
+<br />
+<% @products = Product.all %>
+<% if @products.present? %>
 <div class="panel panel-default">
 	<div class="panel-heading">
 		Products
 	</div>
 	<div class="panel-body">
 		<div class="row text-left"> 
-			<% Product.all.each do |product| %>
-			<div class="col-lg-3 col-md-6 mb-4">
+			<% @products.each do |product| %>
+			<div class="col-lg-3 product-box">
 				<div class="card">
 					<%= image_tag(product.logos.first.logo.url, class: "card-img-top") %>
 					<div class="card-body">
@@ -32,3 +45,4 @@
 		</div>
 	</div>
 </div>
+<% end %>

@@ -20,9 +20,10 @@
 
  body{
  	background: #ddd;
+ 	text-shadow: 2px 2px 5px #000000;
  }
 
- .jumbotron{margin-bottom: 0;background: #ddd;}
+ .jumbotron{margin-bottom: 0;background: #ddd;padding-top: 20px;}
 
  ul, ol{padding-left: 0;}
 
@@ -54,7 +55,9 @@
  	margin-top: -10px;	
  }
 
- img, iframe{max-width: 100%;padding: 2px;border: 1px solid lightgray;}
+ img, iframe{
+ 	max-width: 100%;padding: 2px;border: 1px solid lightgray;
+ }
 
  .logo img, .img-circle, .chat-logo, .search-logo{
  	border-radius: 50%;
@@ -125,6 +128,13 @@
 #line_items #quantity{
 	height: 22px;
     width: 50px;
+}
+
+.product-box{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 15px;
+  margin-left: 5px;
+  padding: 10px;
 }
 
  hr{
