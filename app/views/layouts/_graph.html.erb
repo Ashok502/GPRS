@@ -1,0 +1,21 @@
+<div class="panel panel-default text-center">
+	<div class="panel-heading">
+		Graph
+	</div>
+	<div class="panel-body">
+		<%= line_chart @orders.group_by_month(:created_at, last: 6, current: true).sum('orders.amount'),		
+		library: {
+			yAxis: {
+				labels: {
+					format: '$ {value}'
+				}
+			},
+			tooltip: {
+				pointFormat: 'Total Spent: <b>{point.y}</b>',
+				xDateFormat: '%B - %d',
+				valuePrefix: '$ '
+			}
+		}
+		%>
+	</div>
+</div>

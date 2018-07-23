@@ -88,9 +88,20 @@ Rails.application.configure do
       :bucket => ENV['AWS_BUCKET'],
       :access_key_id => ENV['AWS_KEY_ID'],
       :secret_access_key => ENV['AWS_SECRET_KEY']
-      },
-      :s3_region => ENV['AWS_REGION']
+    },
+    :s3_region => ENV['AWS_REGION']
+  }
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    paypal_options = {
+      :login => ENV["LOGIN"],
+      :password => ENV["PASSWORD"],
+      :signature => ENV["SIGNATURE"]
     }
+    ::STANDARD_GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(paypal_options)
+    ::EXPRESS_GATEWAY = ActiveMerchant::Billing::PaypalExpressGateway.new(paypal_options)
+  end
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'

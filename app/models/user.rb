@@ -18,6 +18,7 @@ class User < ApplicationRecord
   has_many :galleries, dependent: :destroy
   has_many :categories, dependent: :destroy
   has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   validates :username, presence: true, uniqueness: true, on: :update
 

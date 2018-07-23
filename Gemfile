@@ -25,6 +25,11 @@ gem 'jquery-minicolors-rails'
 gem 'dropzonejs-rails'
 gem 'fancybox-rails'
 gem "nested_form"
+gem 'dotenv-rails', groups: [:development, :test]
+gem 'chartkick'
+gem 'highcharts-rails'
+gem 'groupdate'
+gem 'activemerchant', :require => 'active_merchant'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

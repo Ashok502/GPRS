@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :intrests, :ads, :profiles, :galleries, :categories
+  resources :intrests, :ads, :profiles, :galleries, :categories, :orders
 
   resources :products do
     member do
@@ -37,5 +37,6 @@ Rails.application.routes.draw do
   end
   
   get 'users/autocomplete_user_username'
+  get '/order/express' => 'orders#express', :as => :pay
   root :to => "home#index"
 end

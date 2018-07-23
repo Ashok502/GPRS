@@ -27,6 +27,11 @@ GEM
     activejob (5.2.0)
       activesupport (= 5.2.0)
       globalid (>= 0.3.6)
+    activemerchant (1.80.0)
+      activesupport (>= 4.2, < 6.x)
+      builder (>= 2.1.2, < 4.0.0)
+      i18n (>= 0.6.9)
+      nokogiri (~> 1.4)
     activemodel (5.2.0)
       activesupport (= 5.2.0)
     activerecord (5.2.0)
@@ -649,6 +654,7 @@ GEM
       rack (>= 1.6.0)
       rack-test (>= 0.6.3)
       xpath (~> 3.1)
+    chartkick (2.3.5)
     childprocess (0.9.0)
       ffi (~> 1.0, >= 1.0.11)
     chromedriver-helper (1.2.0)
@@ -672,6 +678,10 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    dotenv (2.5.0)
+    dotenv-rails (2.5.0)
+      dotenv (= 2.5.0)
+      railties (>= 3.2, < 6.0)
     dropzonejs-rails (0.8.2)
       rails (> 3.1)
     erubi (1.7.1)
@@ -683,6 +693,10 @@ GEM
       railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    groupdate (4.0.1)
+      activesupport (>= 4.2)
+    highcharts-rails (6.0.3)
+      railties (>= 3.1)
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -848,16 +862,21 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activemerchant
   aws-sdk
   bootsnap (>= 1.1.0)
   byebug
   capybara (>= 2.15, < 4.0)
+  chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
+  dotenv-rails
   dropzonejs-rails
   fancybox-rails
   font-awesome-rails
+  groupdate
+  highcharts-rails
   jbuilder (~> 2.5)
   jquery-minicolors-rails
   jquery-rails

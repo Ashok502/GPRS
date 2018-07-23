@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_22_162441) do
+ActiveRecord::Schema.define(version: 2018_07_23_144516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -129,6 +129,29 @@ ActiveRecord::Schema.define(version: 2018_07_22_162441) do
     t.datetime "updated_at", null: false
     t.index ["conversation_id"], name: "index_messages_on_conversation_id"
     t.index ["user_id"], name: "index_messages_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "cart_id"
+    t.string "ip_address"
+    t.string "first_name"
+    t.string "last_name"
+    t.date "card_expires_on"
+    t.string "card_type"
+    t.string "action"
+    t.decimal "amount"
+    t.boolean "success"
+    t.string "authorization"
+    t.string "message"
+    t.text "params"
+    t.string "payment_type"
+    t.string "express_token"
+    t.string "express_payer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["cart_id"], name: "index_orders_on_cart_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|

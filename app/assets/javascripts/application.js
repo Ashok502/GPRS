@@ -24,6 +24,8 @@
 //= require dropzone
 //= require fancybox
 //= require jquery_nested_form
+//= require highcharts
+//= require chartkick
 //= require_tree .
 
 $(function(){

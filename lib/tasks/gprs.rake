@@ -1,6 +1,7 @@
 namespace :gprs do
-  desc "Notifications"
+  desc "Rake Tasks"
   task minute_run: :environment do
-    p "notifications_posts_path"
+    orders = Order.where(success: false)
+    orders.all.destroy_all
   end
 end

@@ -1,0 +1,41 @@
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    <strong>
+      Payment
+      <span class="pull-right">Total: <%= number_to_currency(current_cart.total) %></span>
+    </strong>
+  </div>
+  <div class="panel-body">
+    <%= form_for @order, :html => {:autocomplete => 'off'} do |f| %>
+    <%= render partial: '/layouts/errors', locals: {resource: @order} %>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.text_field :first_name, class: 'form-control', placeholder: "First name" %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.text_field :last_name, class: 'form-control', placeholder: "Last name" %>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.select :card_type, options_for_select([["Visa", "visa"], ["MasterCard", "master"], ["Discover", "discover"], ["American Express", "american_express"]], :selected => f.object.card_type),{}, class: 'form-control' %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.text_field :card_number, class: 'form-control', placeholder: "Card number" %>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <%= f.date_select :card_expires_on, {:discard_day => true, :start_year => Date.today.year, :end_year => (Date.today.year+10), :add_month_numbers => true, :order => [:month, :year]} %>
+      </div>
+      <div class="form-group col-md-6">
+        <%= f.text_field :card_verification, class: 'form-control', placeholder: "CVV" %>
+      </div>
+    </div>
+    <div class="form-group">
+      <input type="submit" class="btn btn-lg btn-primary btn-block" value="Pay">
+    </div>
+    <% end %>
+  </div>
+</div>
