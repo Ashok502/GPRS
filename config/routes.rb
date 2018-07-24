@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   
   resources :intrests, :ads, :profiles, :galleries, :categories, :orders
 
+  resources :dashboards, only: ['index']
+
   resources :products do
     member do
       get :add_to_cart

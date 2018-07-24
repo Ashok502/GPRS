@@ -1,0 +1,30 @@
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    Orders
+  </div>
+  <div class="panel-body">
+    <div id="product_errors"></div>
+    <div id="product"></div>
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th class="text-center">Name</th>
+          <th class="text-center">Amount</th>
+          <th class="text-center">Authorization</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @invoices.each do |order| %>
+        <tr>
+          <td><%= order.first_name + ' ' + order.last_name %></td>
+          <td><%= number_to_currency(order.amount) %></td>
+          <td><%= order.authorization %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pull-right">
+      <%= will_paginate @invoices, page_links: false, param_name: 'order_page', previous_label: "❮", next_label: "❯" %>
+    </div>
+  </div>
+</div>

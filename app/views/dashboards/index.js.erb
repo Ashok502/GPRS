@@ -1,0 +1,5 @@
+$("#users").html('<%= escape_javascript render partial: "users" %>');
+$("#categories").html('<%= escape_javascript render partial: "categories" %>');
+$("#products").html('<%= escape_javascript render partial: "products" %>');
+$("#orders").html('<%= escape_javascript render partial: "orders" %>');
+$('.pagination a').attr('data-remote', 'true');

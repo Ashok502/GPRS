@@ -1,5 +1,5 @@
 <% if !@category.errors.present? %>
-  $("#users").html('<%= escape_javascript render partial: "index" %>');
+  $("#categories").html('<%= escape_javascript render partial: "/dashboards/categories" %>');
 <% else %>
   $("#category_errors").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @category}%>');
 <% end %>

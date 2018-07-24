@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart']
 	
 	def index
-		@products = current_user.products.page(params[:product_page]).per_page(5)
+		@products = Product.page(params[:product_page]).per_page(5)
 		ajax_submit?
 	end
 
@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
 	def create
 		@product = Product.new(new_params.merge(user_id: current_user.id))
 		1.times{@product.logos.build} if @product.logos.blank?
-		@products = current_user.products.page(params[:product_page]).per_page(5)
+		@products = Product.page(params[:product_page]).per_page(5)
 		if @product.save
 			ajax_submit?
 		end
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 	end
 
 	def update
-		@products = current_user.products.page(params[:product_page]).per_page(5)
+		@products = Product.page(params[:product_page]).per_page(5)
 		if @product.update_attributes(new_params)
 			ajax_submit?
 		end

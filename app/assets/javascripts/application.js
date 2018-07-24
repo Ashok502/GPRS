@@ -31,6 +31,11 @@
 $(function(){
 	$('#Carousel').carousel();  
 
+  $('.pagination a').click(function() {
+    $.get(this.href, null, null, 'script');
+    return false;
+  });
+
   $('#user_color').minicolors()
 
   $(document).on('click', '.toggle-window', function(e) {

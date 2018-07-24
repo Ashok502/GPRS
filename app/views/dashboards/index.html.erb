@@ -1,0 +1,31 @@
+<div class="panel panel-default text-left">
+	<div class="panel-heading">
+		Graph
+	</div>
+	<div class="panel-body">
+		<%= line_chart Order.all.group_by_month(:created_at, last: 6, current: true).sum('orders.amount'),		
+		library: {
+			yAxis: {
+				labels: {
+					format: '$ {value}'
+				}
+			},
+			tooltip: {
+				pointFormat: 'Total Spent: <b>{point.y}</b>',
+				xDateFormat: '%B - %d',
+				valuePrefix: '$ '
+			}
+		}
+		%>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6">
+		<span id="users"><%= render partial: "users" %></span>
+		<span id="orders"><%= render partial: "orders" %></span>
+	</div>
+	<div class="col-sm-6">
+		<span id="categories"><%= render partial: "categories" %></span>
+		<span id="products"><%= render partial: "products" %></span>
+	</div>
+</div>
