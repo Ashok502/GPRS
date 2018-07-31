@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart']
+	before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart']
 	
 	def index
 		@products = Product.page(params[:product_page]).per_page(5)
@@ -29,10 +29,13 @@ class ProductsController < ApplicationController
 		@cart.update_attribute(:created_at, Time.now)
 		session[:cart] = @cart.id
 		@line_item = LineItem.find_by_product_id_and_cart_id(@product.id,@cart.id)
-		if @line_item.present?
-			@line_item.update(quantity: params[:quantity])
-		else
-			LineItem.create(product_id: @product.id, cart_id: @cart.id, unit_price: @product.price, quantity: params[:quantity])
+		@qty = (@product.quantity >= params[:quantity].to_i)
+		if @qty == true
+			if @line_item.present?
+				@line_item.update(quantity: params[:quantity])
+			else
+				LineItem.create(product_id: @product.id, cart_id: @cart.id, unit_price: @product.price, quantity: params[:quantity])
+			end
 		end
 		ajax_submit?
 	end

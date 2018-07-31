@@ -1,0 +1,18 @@
+<div class="panel panel-default text-left">
+	<div class="panel-heading">
+		<strong>
+			Apply Coupon
+		</strong>
+	</div>
+	<div class="panel-body">
+		<%= form_tag apply_code_coupons_path, method: :get, remote: true do %>      
+		<div class="input-group">
+		<%= text_field_tag :coupon_code,'', class: 'form-control', autocomplete: "off", placeholder: "Coupon Code", required: true %>
+			<span class="input-group-btn">
+				<button class="btn btn-primary" type="submit">Apply</button>
+			</span>
+		</div>
+		<% end %>
+		<span class="coupon-error"></span>
+	</div>
+</div>

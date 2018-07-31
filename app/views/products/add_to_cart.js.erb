@@ -1,3 +1,7 @@
-$(".dropdown-cart").html('<%= escape_javascript render partial: "/layouts/cart" %>');
-$(".cart-count").html("<%= @cart.line_items.count %>")
-$(".total-cart").addClass('open');
+<% if @qty == true %>
+  $(".dropdown-cart").html('<%= escape_javascript render partial: "/layouts/cart" %>');
+  $(".cart-count").html("<%= @cart.line_items.count %>")
+  $(".total-cart").addClass('open');
+<% else %>
+  alert("Quantity Availabled only <%= @product.quantity %>");
+<% end %>

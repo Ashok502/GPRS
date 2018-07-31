@@ -1,11 +1,11 @@
 <% if current_user %>
-<%= render partial: '/galleries/gallery' %>
-<%= render partial: "/layouts/graph" %>
-<%= render partial: "/layouts/search" %>
+  <%= render partial: "/layouts/graph" %>
+  <%= render partial: "/layouts/search" %>
+  <%= render partial: '/galleries/gallery' %>
 <div id="posts">
-	<%= render partial: "/posts/index" %>
+  <%= render partial: "/posts/index" %>
 </div>
-<%= will_paginate @posts %>
+  <%= will_paginate @posts %>
 <% else %>
-<%= render partial: "/layouts/slider" %>
+  <%= render partial: "/layouts/slider" %>
 <% end %>

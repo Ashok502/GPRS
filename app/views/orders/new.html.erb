@@ -1,11 +1,14 @@
+<div class="apply-coupon"></div>
 <div class="panel panel-default text-left">
   <div class="panel-heading">
     <strong>
-      Payment
-      <span class="pull-right">Total: <%= number_to_currency(current_cart.total) %></span>
+    Payment (<span class="total-amount"><%= number_to_currency(current_cart.total) %></span>)
+      <span class="pull-right"> 
+        <%= link_to "Apply Coupon", apply_coupons_path, class: 'btn btn-success btn-xs', remote: true %>
+      </span>
     </strong>
   </div>
-  <div class="panel-body">
+  <div class="panel-body">    
     <%= form_for @order, :html => {:autocomplete => 'off'} do |f| %>
     <%= render partial: '/layouts/errors', locals: {resource: @order} %>
     <div class="form-row">

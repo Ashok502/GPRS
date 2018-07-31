@@ -1,0 +1,9 @@
+<%= form_for @coupon, remote: true do |f| %>      
+<div class="input-group">
+	<%= f.text_field :percentage, class: 'form-control primary', autocomplete: "off", placeholder: "Percentage", required: true %>
+	<span class="input-group-btn">
+		<button class="btn btn-primary" type="submit">Submit</button>
+	</span>
+</div>
+<% end %>
+<br />

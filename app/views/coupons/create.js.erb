@@ -1,0 +1,5 @@
+<% if !@coupon.errors.present? %>
+  $("#coupons").html('<%= escape_javascript render partial: "/dashboards/coupons" %>');
+<% else %>
+  $("#coupon_errors").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @coupon}%>');
+<% end %>

@@ -24,6 +24,13 @@ Rails.application.routes.draw do
 
   resources :dashboards, only: ['index']
 
+  resources :coupons do
+    collection do
+      get :apply
+      get :apply_code
+    end
+  end
+
   resources :products do
     member do
       get :add_to_cart

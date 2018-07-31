@@ -23,6 +23,9 @@ class OrdersController < ApplicationController
         item.product.update_attribute(:quantity, item.product.quantity - item.quantity)
       end
       @cart.update_attribute(:published_at, Date.today)
+      if @cart.coupon.present?
+        @cart.coupon.update(status: 'Applied')
+      end
       session[:cart] = nil
       redirect_to "/"
     else

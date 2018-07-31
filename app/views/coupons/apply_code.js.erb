@@ -1,0 +1,6 @@
+<% if @coupon.present? %>
+  $(".apply-coupon").html("<p>Coupon Applied</p>").css("color", 'green');
+  $(".total-amount").html("$<%= current_cart.total %>")
+<% else %>
+  $(".coupon-error").html("Invalid Coupon").css("color", 'red');
+<% end %>
