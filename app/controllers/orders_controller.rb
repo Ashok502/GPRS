@@ -37,6 +37,11 @@ class OrdersController < ApplicationController
     ajax_submit?
   end
 
+  def show
+    @order = Order.find(params[:id])
+    ajax_submit?
+  end
+
   private
   def params_order
     params.require(:order).permit!

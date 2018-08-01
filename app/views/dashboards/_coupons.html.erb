@@ -22,8 +22,12 @@
           <td><%= coupon.percentage %></td>
           <td><%= coupon.status %></td>
           <td>
+            <% if coupon.status == 'New' %>
             <%= link_to "edit", edit_coupon_path(coupon), remote: true, class: 'btn btn-warning btn-xs' %>
             <%= link_to "delete", coupon_path(coupon), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
+            <% else %>
+            <%= "--" %>
+            <% end %>
           </td>
         </tr>
         <% end %>

@@ -8,7 +8,9 @@
     <table class="table table-bordered text-center">
       <thead>
         <tr>
+          <th class="text-center">ID</th>
           <th class="text-center">Name</th>
+          <th class="text-center">E-mail</th>
           <th class="text-center">Amount</th>
           <th class="text-center">Authorization</th>
         </tr>
@@ -16,7 +18,9 @@
       <tbody>
         <% @orders.each do |order| %>
         <tr>
-          <td><%= order.first_name + ' ' + order.last_name %></td>
+          <td><%= link_to "Order-#{order.id}", order_path(order), remote: true %></td>
+          <td><%= order.first_name %></td>
+          <td><%= order.user.email %></td>
           <td><%= number_to_currency(order.amount) %></td>
           <td><%= order.authorization %></td>
         </tr>
@@ -28,3 +32,4 @@
     </div>
   </div>
 </div>
+<div class="order-details"></div>
