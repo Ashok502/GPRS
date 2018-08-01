@@ -23,6 +23,8 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true, on: :update
 
   before_save :limit_intrests?, :limit_ads?
+  geocoded_by :address
+  after_validation :geocode, :if => :address_changed?
 
   scope :search, -> (search, user) { where("username ilike (?) AND id NOT IN (?)", "#{search}%", user)}
 

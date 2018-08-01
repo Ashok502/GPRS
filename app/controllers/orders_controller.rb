@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   before_action :is_login?
+  respond_to :html, :json
   def express
     response = EXPRESS.setup_purchase(current_cart.total * 100,
       :ip => request.remote_ip,
@@ -7,7 +8,7 @@ class OrdersController < ApplicationController
       :cancel_return_url => root_url,
       :allow_note => true,
       :items => current_cart.cart_details
-    )
+      )
     redirect_to EXPRESS.redirect_url_for(response.token)
   end
 
@@ -31,6 +32,12 @@ class OrdersController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+  def update
+    @order = Order.find(params[:id])
+    @order.update_attributes(params_order)
+    respond_with @order
   end
 
   def index

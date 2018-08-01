@@ -3,12 +3,40 @@
     Order Details
   </div>
   <div class="panel-body">
+    <b>Track Status</b>
+    <hr class="my-5">
+    <div class="row shop-tracking-status">
+      <div class="order-status well">
+
+        <div class="order-status-timeline">
+          <div class="order-status-timeline-completion <%= @order.status %>"></div>
+        </div>
+
+        <div class="image-order-status image-order-status-new active">
+          <div class="icon"></div>
+        </div>
+        <div class="image-order-status image-order-status-active active">
+          <div class="icon"></div>
+        </div>
+        <div class="image-order-status image-order-status-intransit active">
+          <div class="icon"></div>
+        </div>
+        <div class="image-order-status image-order-status-delivered active">
+          <div class="icon"></div>
+        </div>
+        <div class="image-order-status image-order-status-completed active">
+          <div class="icon"></div>
+        </div>
+      </div>
+    </div>
+    <hr class="my-5">
     <div class="card">
-      <div class="card-body p-0">
+      <div class="card-body p-0 text-muted">
         <div class="row p-5">
           <div class="col-md-6">
             <p class="font-weight-bold mb-1">#Order-<%= @order.id %></p>
-            <p class="text-muted">Date: <%= @order.created_at.strftime("%d-%m-%Y") %></p>
+            <p class="font-weight-bold mb-1">Status: <%= @order.status %></p>
+            <p>Date: <%= @order.created_at.strftime("%d-%m-%Y") %></p>
           </div>
         </div>
 

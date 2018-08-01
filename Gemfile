@@ -30,6 +30,8 @@ gem 'chartkick'
 gem 'highcharts-rails'
 gem 'groupdate'
 gem 'activemerchant', :require => 'active_merchant'
+gem 'best_in_place'
+gem 'geocoder'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

@@ -22,6 +22,8 @@
  	background: #ddd;
  }
 
+ .modal-dialog{width: auto;}
+
  .jumbotron{margin-bottom: 0;background: #ddd;padding-top: 20px;}
 
  ul, ol{padding-left: 0;}

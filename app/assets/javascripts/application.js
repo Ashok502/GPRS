@@ -26,10 +26,13 @@
 //= require jquery_nested_form
 //= require highcharts
 //= require chartkick
+//= require best_in_place
 //= require_tree .
 
 $(function(){
-	$('#Carousel').carousel();  
+	$('#Carousel').carousel(); 
+
+  $('.best_in_place').best_in_place() 
 
   $('.pagination a').click(function() {
     $.get(this.href, null, null, 'script');
