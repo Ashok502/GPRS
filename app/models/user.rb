@@ -20,16 +20,20 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :orders, dependent: :destroy
 
-  validates :username, presence: true, uniqueness: true, on: :update
+  validates :username, :country, :state, :city, :pincode, :address, presence: true, uniqueness: true, on: :update
 
   before_save :limit_intrests?, :limit_ads?
-  geocoded_by :address
-  after_validation :geocode, :if => :address_changed?
+  geocoded_by :address?
+  after_validation :geocode, :if => :city_changed?
 
   scope :search, -> (search, user) { where("username ilike (?) AND id NOT IN (?)", "#{search}%", user)}
 
   def limit_intrests?
   	self.intrests.count
+  end
+
+  def address?
+    "#{self.city}, #{self.state}, #{self.country}"
   end
 
   def limit_galleries?

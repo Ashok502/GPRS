@@ -22,6 +22,9 @@ Rails.application.routes.draw do
   
   resources :intrests, :ads, :profiles, :galleries, :categories, :orders
 
+  resources :cities, only: :index
+  resources :states, only: :index
+
   resources :dashboards, only: ['index']
 
   resources :coupons do

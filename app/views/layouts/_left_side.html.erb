@@ -10,6 +10,8 @@
       <p>
         <span class="label label-success username"><%= current_user.username %></span>
         <span class="label label-primary useremail"><%= current_user.email %></span>
+        <span class="label label-warning address"><%= current_user.city.present? ? (current_user.address + ', ' + current_user.city + ', ' + @current_user.state + ', ' + current_user.country) : '' %></span>
+        <span class="label label-danger pincode"><%= current_user.pincode %></span>
       </p>
     </div>
   </div>
