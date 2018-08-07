@@ -1,14 +1,12 @@
 <div class="panel panel-default text-left">
 	<div class="panel-heading">Search Results</div>
 	<div class="panel-body">
-		<div id="invite_notification"></div>
 		<ul>
 			<% if users.present? %>
 			<% users.each do |user| %>
 			<li>
 				<%= image_tag user.avatar.url, class: "search-logo" %>
-				<%= user.username %>
-				<%= link_to "Invite", sent_profile_path(user.id), remote: true, class: "btn btn-success btn-xs pull-right invite_#{user.id}", id: "invite_btn" %>		  	
+				<%= user_profile_path(user) %>
 			</li>
 			<% end %>
 			<% else %>

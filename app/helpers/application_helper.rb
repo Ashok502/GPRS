@@ -17,4 +17,8 @@ module ApplicationHelper
 	def user_photo(user)
 		image_tag user.avatar.url(:original), class: "img-circle", alt: "Avatar"
 	end
+
+	def user_profile_path(user)
+		link_to user.username, profile_path(user), remote: true
+	end
 end

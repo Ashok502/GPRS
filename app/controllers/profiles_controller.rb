@@ -15,16 +15,16 @@ class ProfilesController < ApplicationController
 	end
 
 	def sent
-		@user = current_user
-		puts @user.id
 		@receiver = User.find(params[:id])
-		puts @receiver.id
-		@sent_friend = Friend.find_by_sender_id_and_receiver_id(@user.id, @receiver.id)
-		@received_friend = Friend.find_by_sender_id_and_receiver_id(@receiver.id, @user.id)
-		if !(@sent_friend || @received_friend)
-			Friend.create(sender_id: @user.id, receiver_id: @receiver.id)
+		@sent_friend = Friend.find_by_sender_id_and_receiver_id(current_user.id, @receiver.id)
+		if !@sent_friend.present?
+			Friend.create(sender_id: current_user.id, receiver_id: @receiver.id)
+		else
+			@sent_friend.update(accept: @sent_friend.accept == 0 ? 1 : 0)
 		end
 		ajax_submit?
+		@sents = @receiver.sent_requests.where(accept: 1).count
+		@receives = @receiver.received_requests.where(accept: 1).count
 	end
 
 	def update_profile
@@ -32,6 +32,13 @@ class ProfilesController < ApplicationController
 		if @user.update_attributes(user_params)
 			ajax_submit?
 		end
+	end
+
+	def show
+		@user = User.find(params[:id])
+		@sents = @user.sent_requests.where(accept: 1).count
+		@receives = @user.received_requests.where(accept: 1).count
+		ajax_submit?
 	end
 
 	def accept

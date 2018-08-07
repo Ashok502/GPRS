@@ -1,2 +1,3 @@
-$("#success_notification").html("Invitation sent").addClass("alert alert-success");
-$(".invite_<%= @receiver.id %>").html("Invited").addClass("btn-danger").removeClass("btn-success");
+$(".twPc-button").html("<%= escape_javascript render partial: 'sent', locals: {user: @receiver}%>");
+$(".sents").html("<%= @sents %>");
+$(".receives").html("<%= @receives %>");

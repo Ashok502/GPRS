@@ -1,0 +1,2 @@
+<% @sent_friend = Friend.find_by_sender_id_and_receiver_id(current_user.id, user.id) %>
+<%= current_user.id != user.id ? (link_to ((!@sent_friend.present? || @sent_friend.accept == 0)  ? 'Follow' : 'Unfollow'), sent_profile_path(user), remote: true, class: 'btn btn-default pull-right') : '' %>

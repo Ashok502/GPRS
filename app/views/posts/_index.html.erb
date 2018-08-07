@@ -2,7 +2,7 @@
 <div class="panel panel-default text-left" id="post_<%= post.id %>">
 	<div class="panel-heading">
 		<%= image_tag(post.user.avatar.url, class: 'comment-logo') %>
-		<%= post.user.username %>
+		<%= user_profile_path(post.user) %>
 		<%= (current_user and post.user_id == current_user.id) ? (link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, post_path(post), method: :delete, class: "pull-right", data: {confirm: "Are you sure"}, remote: true) : "" %>
 	</div>
 	<div class="panel-body">

@@ -2,7 +2,7 @@
   <div class="panel panel-default" data-conversation-id="<%= conversation.id %>">
     <div class="panel-heading toggle-window">
       <%= image_tag(conversation.opposed_user(user).avatar.url, class: 'comment-logo') %>
-      <%= conversation.opposed_user(user).username %>
+      <%= user_profile_path(conversation.opposed_user(user)) %>
       <%= link_to "<i class='fa fa-times-circle fa-lg'></i>".html_safe, close_conversation_path(conversation), class: "pull-right", remote: true, method: :post %>
     </div>
 

@@ -1,0 +1,35 @@
+<div class="twPc-div">
+	<a class="twPc-bg twPc-block" style="background: <%= @user.color %>"></a>
+	<div>
+		<div class="twPc-button">
+			<%= render partial: 'sent', locals: {user: @user} %>
+		</div>
+
+		<a class="twPc-avatarLink">
+			<%= image_tag @user.avatar.url, class: "twPc-avatarImg" %>
+		</a>
+
+		<div class="twPc-divUser text-left">
+			<div class="twPc-divName">
+				<%= @user.username %>
+			</div>
+		</div>
+
+		<div class="twPc-divStats">
+			<ul class="twPc-Arrange">
+				<li class="twPc-ArrangeSizeFit">
+					<a>
+						<span class="twPc-StatLabel twPc-block">Following</span>
+						<span class="twPc-StatValue sents"><%= @sents %></span>
+					</a>
+				</li>
+				<li class="twPc-ArrangeSizeFit">
+					<a>
+						<span class="twPc-StatLabel twPc-block">Followers</span>
+						<span class="twPc-StatValue receives"><%= @receives %></span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
