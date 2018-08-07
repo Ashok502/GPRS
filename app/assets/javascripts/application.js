@@ -30,7 +30,7 @@
 //= require_tree .
 
 $(function(){
-	$('#Carousel').carousel(); 
+	$('#myCarousel').carousel(); 
 
   $('.best_in_place').best_in_place() 
 

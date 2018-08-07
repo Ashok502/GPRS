@@ -3,7 +3,6 @@ $("#ChangeProfile").modal('hide');
 $(".user-photo").html('<%= user_photo(@user) %>');
 $(".username").html('<%= @user.username %>');
 $(".address").html('<%= @user.address + ', ' + @user.city + ', ' + @user.state + ', ' + @user.country %>');
-$(".pincode").html('<%= @user.pincode %>');
 $(".useremail").html('<%= @user.email %>');
 $(".user-details").css('background', '<%= @user.color %>');
 $("#success_notification").html("Successfully Updated the details").addClass("alert alert-success");
