@@ -16,6 +16,7 @@
  *= require jquery.minicolors
  *= require dropzone/dropzone
  *= require fancybox
+ *= require 'timepiece'
  */
 
  body{
@@ -99,12 +100,6 @@
  	width: 100%;
  }
 
- #new_ad input[type="file"], .edit_user input[type="file"]{
- 	display: none;
- }
-
- #new_ad label.btn{border-radius: 4px 0px 0px 4px;}
-
  #new_comment{padding: 5px 10px 10px 10px;}
 
  #comments{padding: 0 10px;margin-bottom: -5px;}
@@ -117,7 +112,7 @@
 
  #user_color{height: 30px;}
 
-.pagination .next_page, .pagination .previous_page {
+ .pagination .next_page, .pagination .previous_page {
   padding: 5px 8px;
   text-decoration: none;
   transition: background-color .3s;
@@ -128,7 +123,7 @@
 
 #line_items #quantity{
 	height: 22px;
-    width: 50px;
+  width: 50px;
 }
 
 .product-box{
@@ -138,15 +133,23 @@
   padding: 10px;
 }
 
- hr{
- 	margin-top: 10px;
- 	margin-bottom: 5px;
- }
+.timepiece-analog{
+  display: inline-block;
+}
 
- a{outline: none;}
+.new_ad{margin-bottom: 20px;}
 
- footer {
- 	background-color: #555;
- 	padding: 15px 15px;
- 	color: white;
- }
+#cart_expires{color: red;font-weight: bold;}
+
+hr{
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+a{outline: none;}
+
+footer {
+  background-color: #555;
+  padding: 15px 15px;
+  color: white;
+}

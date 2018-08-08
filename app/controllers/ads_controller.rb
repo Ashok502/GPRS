@@ -1,7 +1,13 @@
 class AdsController < ApplicationController
+
+	def new
+		@ad = Ad.new
+		ajax_submit?
+	end
+	
 	def create
 		@user = current_user	
-		@ads = @user.ads	
+		@ads = Ad.page(params[:ad_page]).per_page(10)
 		@ad = Ad.new(post_params.merge(user_id: @user.id))
 		if @ad.user.limit_ads? <= 5 && @ad.save
 			ajax_submit?
@@ -9,10 +15,10 @@ class AdsController < ApplicationController
 	end
 
 	def destroy
-    @ad = Ad.find(params[:id])
-    @ad.destroy 
-    ajax_submit?
-  end
+		@ad = Ad.find(params[:id])
+		@ad.destroy 
+		ajax_submit?
+	end
 
 	private
 

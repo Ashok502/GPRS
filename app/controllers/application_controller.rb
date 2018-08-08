@@ -46,7 +46,7 @@ class ApplicationController < ActionController::Base
     @posts = Post.order("created_at desc").page(params[:page]).per_page(3)    
     @galleries = current_user ? current_user.galleries : 0
     @intrests = current_user ? current_user.intrests.all : 0
-    @ads = current_user ? current_user.ads.order("created_at desc") : 0
+    @ads = Ad.order("created_at desc")
     @users = User.where.not(id: current_user, role: 'admin').order("updated_at desc")
     @orders = current_user.orders.where(success: true).page(params[:order_page]).per_page(5)
     @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])

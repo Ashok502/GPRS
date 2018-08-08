@@ -33,6 +33,7 @@ gem 'activemerchant', :require => 'active_merchant'
 gem 'best_in_place'
 gem 'geocoder'
 gem 'city-state'
+gem 'timepiece'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

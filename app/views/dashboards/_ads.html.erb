@@ -1,0 +1,28 @@
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    Ads
+    <%= link_to "New Ad", new_ad_path, remote: true, class: 'btn btn-primary btn-xs pull-right' %>
+  </div>
+  <div class="panel-body">
+    <div id="ad"></div>
+    <table class="table table-bordered text-center">
+      <thead>
+        <tr>
+          <th class="text-center">Image</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @ads.each do |ad| %>
+        <tr id="ad_<%= ad.id %>">
+          <td><%= image_tag ad.image.url(:original), width: "40", height: "30" %></td>
+          <td><%= link_to "delete", ad_path(ad), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div class="pull-right">
+      <%= will_paginate @ads, page_links: false, param_name: 'ad_page', previous_label: "❮", next_label: "❯" %>
+    </div>
+  </div>
+</div>
