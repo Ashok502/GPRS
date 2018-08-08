@@ -32,7 +32,7 @@
     </li>
     <li class="list-group-item text-right">
       <span class="pull-left"><strong class="">Followers</strong></span>
-      <span class="label label-danger"> 20 </span>
+      <span class="label label-danger"> <%= current_user.received_requests.count %></span>
     </li>
   </ul> 
   <div class="panel panel-default text-center">
