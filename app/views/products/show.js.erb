@@ -1,0 +1,4 @@
+$("#ProductDetail").modal();
+$("#product_detail").html("<%= escape_javascript render partial: 'show', locals: {product: @product} %>");
+$("#reviews").html("<%= escape_javascript render partial: '/reviews/index', locals: {product: @product} %>");
+$('.pagination a').attr('data-remote', 'true');

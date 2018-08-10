@@ -20,7 +20,7 @@
 			<% @products.each do |product| %>
 			<div class="col-lg-3 product-box">
 				<div class="card">
-					<%= image_tag(product.logos.first.logo.url, class: "card-img-top") %>
+					<%= link_to image_tag(product.logos.first.logo.url, class: "card-img-top"), product_path(product), remote: true %>
 					<div class="card-body">
 						<h5 class="card-title">
 							<%= product.title %>

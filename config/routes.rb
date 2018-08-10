@@ -35,6 +35,7 @@ Rails.application.routes.draw do
   end
 
   resources :products do
+    resources :reviews
     member do
       get :add_to_cart
       delete :item_delete

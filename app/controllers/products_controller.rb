@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-	before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart']
+	before_action :get_product, only: ['edit', 'update', 'destroy','add_to_cart', 'show']
 	
 	def index
 		@products = Product.page(params[:product_page]).per_page(5)
@@ -49,6 +49,11 @@ class ProductsController < ApplicationController
 
 	def destroy
 		@product.destroy
+		ajax_submit?
+	end
+
+	def show
+		@reviews = @product.reviews.page(params[:review_page]).per_page(5)
 		ajax_submit?
 	end
 
