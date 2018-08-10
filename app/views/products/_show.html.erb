@@ -29,7 +29,7 @@
                 </ul>
               </div>
               <div class="details col-md-7">
-                <p class="product-description"><%= product.description %></p>
+                <p class="product-description"><%= product.description.html_safe %></p>
                 <h5 class="price"><span><%= number_to_currency(product.price) %></span></h5>
                 <div class="action">
                   <%= link_to "Add to Cart", add_to_cart_product_path(product, quantity: 1), remote: true, class: "btn btn-default" %>
