@@ -2,7 +2,7 @@
 <div class="input-group">
 	<%= f.text_field :comment, class: 'form-control primary', autocomplete: "off", placeholder: "Comment", required: true %>
 	<span class="input-group-btn">
-		<button class="btn btn-primary" type="submit">Comment</button>
+		<%= loader_button(f) %>
 	</span>
 </div>
 <% end %>

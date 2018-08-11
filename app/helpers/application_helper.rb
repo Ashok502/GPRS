@@ -21,4 +21,8 @@ module ApplicationHelper
 	def user_profile_path(user)
 		link_to user.username, profile_path(user), remote: true
 	end
+
+	def loader_button(btn)
+		btn.button "Submit", class: 'btn btn-primary', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Submit"}
+	end
 end

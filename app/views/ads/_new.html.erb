@@ -1,8 +1,8 @@
 <%= form_for @ad, remote: true do |f| %>      
 <div class="input-group">
-<%= f.file_field :image, required: true, class: 'form-control primary' %>
+	<%= f.file_field :image, required: true, class: 'form-control primary' %>
 	<span class="input-group-btn">
-		<button class="btn btn-primary" type="submit">SUBMIT</button>
+		<%= loader_button(f) %>
 	</span>
 </div>
 <% end %>

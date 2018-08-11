@@ -45,24 +45,25 @@
       <div class="input-group">
         <%= f.text_field :name, class: 'form-control primary', autocomplete: "off", placeholder: "Interests", required: true %>
         <span class="input-group-btn">
-          <button class="btn btn-primary" type="submit">Intrest</button>
-        </span>
-      </div>
-      <% end %>
-      <hr />
-      <div id="intrests" class="interests">
-        <%= render partial: "/intrests/index" %>
-      </div>
-    </div>  
-  </div>
-  <div class="panel panel-default">
-    <div class="panel-heading">Social Media</div>
-    <div class="panel-body">
-      <i class="fa fa-facebook fa-2x"></i> 
-      <i class="fa fa-github fa-2x"></i> 
-      <i class="fa fa-twitter fa-2x"></i>
-      <i class="fa fa-pinterest fa-2x"></i> 
-      <i class="fa fa-google-plus fa-2x"></i>
+          <%= loader_button(f) %>
+        
+      </span>
     </div>
+    <% end %>
+    <hr />
+    <div id="intrests" class="interests">
+      <%= render partial: "/intrests/index" %>
+    </div>
+  </div>  
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">Social Media</div>
+  <div class="panel-body">
+    <i class="fa fa-facebook fa-2x"></i> 
+    <i class="fa fa-github fa-2x"></i> 
+    <i class="fa fa-twitter fa-2x"></i>
+    <i class="fa fa-pinterest fa-2x"></i> 
+    <i class="fa fa-google-plus fa-2x"></i>
   </div>
+</div>
 </div>
