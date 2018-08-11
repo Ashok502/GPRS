@@ -20,7 +20,8 @@
  */
 
  body{
- 	background: #101010;
+ 	background-image: url(/assets/background.jpeg);
+  background-size: cover;
  }
 
  .modal-dialog{width: auto;}

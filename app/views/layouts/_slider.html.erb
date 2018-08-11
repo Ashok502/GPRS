@@ -1,48 +1,30 @@
-<% images = ["/assets/slider1.jpg", "/assets/slider2.jpg", "/assets/slider3.jpg"] %>
-<div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
-  <div class="carousel-inner">
-    <% images.each_with_index do |image, index| %>
-    <div class="<%= index == 0 ? 'active' : '' %> item">
-      <%= image_tag image %>
-    </div>
-    <% end %>
-  </div>
-</div>
-<br />
 <% @products = Product.all %>
 <% if @products.present? %>
-<div class="panel panel-default">
-	<div class="panel-heading">
-		Products
-	</div>
-	<div class="panel-body">
-		<div class="row text-left"> 
-			<% @products.each do |product| %>
-			<div class="col-lg-3 product-box">
-				<div class="card">
-					<%= link_to image_tag(product.logos.first.logo.url, class: "card-img-top"), product_path(product), remote: true %>
-					<div class="card-body">
-						<h5 class="card-title">
-							<%= product.title %>
-							<span class="pull-right">
-								<%= number_to_currency(product.price) %>
-							</span>
-						</h5>
-					</div>
-					<div class="card-footer">
-						<%= form_tag add_to_cart_product_path(product), method: :get, remote: true do %>      
-						<div class="input-group">
-							<%= number_field_tag :quantity,'', min: 1, max: 20, class: 'form-control primary', autocomplete: "off", placeholder: "Qty", required: true %>
-							<span class="input-group-btn">
-								<button class="btn btn-primary" type="submit">Add to Cart</button>
-							</span>
-						</div>
-						<% end %>
-					</div>
-				</div>
+<div class="row text-left"> 
+	<% @products.each do |product| %>
+	<div class="col-lg-3 product-box">
+		<div class="card">
+			<%= link_to image_tag(product.logos.first.logo.url, class: "card-img-top"), product_path(product), remote: true %>
+			<div class="card-body">
+				<h5 class="card-title">
+					<%= product.title %>
+					<span class="pull-right">
+						<%= number_to_currency(product.price) %>
+					</span>
+				</h5>
 			</div>
-			<% end %>	
+			<div class="card-footer">
+			<%= form_tag add_to_cart_product_path(product), method: :get, remote: true do %>     
+				<div class="input-group">
+					<%= number_field_tag :quantity,'', min: 1, max: 20, class: 'form-control primary', autocomplete: "off", placeholder: "Qty", required: true %>
+					<span class="input-group-btn">
+						<button class="btn btn-primary" type="submit">Add to Cart</button>
+					</span>
+				</div>
+				<% end %>
+			</div>
 		</div>
 	</div>
+	<% end %>	
 </div>
 <% end %>
