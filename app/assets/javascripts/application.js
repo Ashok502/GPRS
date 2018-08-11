@@ -73,6 +73,11 @@ $(function(){
       next.children(':first-child').clone().appendTo($(this));
     }
   });
+
+  $('.top-link').click(function(){
+    $('.top-link').removeClass("active");
+    $(this).addClass("active");
+  });
 });
 
 $(document).ready(function(){
