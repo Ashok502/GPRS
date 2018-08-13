@@ -151,11 +151,11 @@ a{outline: none;}
 
 .footer {
  position: fixed;
- left: 0;
  bottom: 0;
  width: 100%;
- background-color: #ddd;
- color: #000;
+ background-color: #222;
+ color: #fff;
  text-align: center;
  padding-top: 8px;
+ border-top: 1px solid #080808;
 }
