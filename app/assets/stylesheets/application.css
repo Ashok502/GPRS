@@ -149,6 +149,8 @@ hr{
 
 a{outline: none;}
 
+textarea{resize: none;}
+
 .footer {
  position: fixed;
  bottom: 0;

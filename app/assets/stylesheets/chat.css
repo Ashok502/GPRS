@@ -1,5 +1,9 @@
 .user-friend-list .active{color: green;font-weight: bold;}
 
+#conversations-list .chat-line{width: 23%;display: inline-block;}
+
+.chat-line .panel-body{padding-left: 0;}
+
 .chat {
   list-style: none;
   margin: 0;
@@ -35,10 +39,12 @@ ul{margin-bottom: 0;}
 
 .chatbox{
   position: fixed;
-  bottom: 0;
+  bottom: 40px;
   right: 0;
-  width: 350px;
+  width: 100%;
   font-size: .9em;
+  padding-left: 5px;
+  z-index: 100;
 }
 
 .chatbox .fa-times-circle{color: #000;}

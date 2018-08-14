@@ -49,7 +49,7 @@ $(function(){
     var messages_list = panel.find('.messages-list');
 
     panel.find('.panel-body').toggle();
-    panel.attr('class', 'panel panel-default');
+    panel.attr('class', 'chat-line panel panel-default');
 
     if (panel.find('.panel-body').is(':visible')) {
       var height = messages_list[0].scrollHeight;
@@ -78,6 +78,11 @@ $(function(){
     $('.top-link').removeClass("active");
     $(this).addClass("active");
   });
+
+  $("#feedback-tab").click(function() {
+    $("#feedback-form").toggle("slide");
+  });
+  
 });
 
 $(document).ready(function(){

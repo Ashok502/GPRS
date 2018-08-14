@@ -1,0 +1,35 @@
+#feedback {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  top: 50%;
+  height: 250px;
+  margin-left: -3px;
+  margin-bottom: -3px;
+}
+
+#feedback-form {
+  float: right;
+  width: 300px;
+  height: 100%;
+  z-index: 1000;
+  top: -35%;
+  padding-left: 5px;
+  padding-right: 10px;
+  border: 1px solid rgba(0,0,0,.2);
+  display: none;  
+}
+
+#feedback-tab {
+  float: right;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  width: 120px;
+  height: 42px;
+  background-color: rgba(0,0,0,0.5);
+  margin-right: -42px;
+  padding-top: 5px;
+  transform: rotate(90deg);
+}
