@@ -1,6 +1,6 @@
 <div class="panel panel-default text-left">
 	<div class="panel-heading">
-		Graph
+		Orders
 	</div>
 	<div class="panel-body">
 		<%= line_chart @orders.group_by_month(:created_at, last: 6, current: true).sum('orders.amount'),		

@@ -29,6 +29,7 @@
 //= require best_in_place
 //= require timepiece
 //= require star-rating
+//= require mini-event-calendar.min
 //= require_tree .
 
 $(function(){

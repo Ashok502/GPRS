@@ -6,10 +6,10 @@
 	</div>
 	<div class="panel panel-default text-center">
 		<div class="panel-heading">
-			Calender
+			Events
 		</div>
 		<div class="panel-body">		
-			<div id="datepicker"></div>
+			<div id="event_calendar"></div>
 		</div> 
 	</div>
 	<div class="panel panel-default text-center">
@@ -28,6 +28,10 @@
 </div>
 <script>
 	$( function() {
-		$( "#datepicker" ).datepicker();
+		var db_events = [{title: "Lunch at 1pm - 2pm", date: "2018-08-01"}, {title: "Dinner at 8pm - 9pm", date: "2018-08-02"}];
+
+		$( "#event_calendar" ).MEC({
+			events: db_events
+		});
 	} );
 </script>
