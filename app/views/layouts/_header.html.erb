@@ -13,7 +13,7 @@
       <div class="form-group input-group">
         <%= text_field_tag :search, params[:search], class: 'form-control header-search', placeholder: "Search", required: true, data: {autocomplete: users_autocomplete_user_username_path} %>
         <span class="input-group-btn">
-          <button class="btn btn-default" type="submit">
+          <button class="btn btn-default" type="submit" , data-disable-with = "<i class='fa fa-spinner fa-spin'></i>">
             <span class="fa fa-search"></span>
           </button>
         </span>        
