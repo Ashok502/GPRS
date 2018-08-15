@@ -42,6 +42,7 @@ class ApplicationController < ActionController::Base
     @comment = Comment.new
     @ad = Ad.new
     @gallery = Gallery.new
+    @feedback = Feedback.new
     session[:conversations] ||= []
     @posts = Post.order("created_at desc").page(params[:page]).per_page(3)    
     @galleries = current_user ? current_user.galleries : 0

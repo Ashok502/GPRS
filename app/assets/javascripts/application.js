@@ -50,7 +50,7 @@ $(function(){
     var messages_list = panel.find('.messages-list');
 
     panel.find('.panel-body').toggle();
-    panel.attr('class', 'chat-line panel panel-default');
+    panel.attr('class', 'panel panel-default');
 
     if (panel.find('.panel-body').is(':visible')) {
       var height = messages_list[0].scrollHeight;

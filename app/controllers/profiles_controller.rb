@@ -49,9 +49,19 @@ class ProfilesController < ApplicationController
 		ajax_submit?
 	end
 
+	def feedback
+		@feedback = Feedback.new(new_params.merge(user_id: current_user.id))
+		@feedback.save
+		ajax_submit?
+	end
+
 	private
 
 	def user_params
 		params.require(:user).permit!
+	end
+
+	def new_params
+		params.require(:feedback).permit!
 	end
 end

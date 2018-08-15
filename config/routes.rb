@@ -47,6 +47,9 @@ Rails.application.routes.draw do
   		put :update_profile, :accept
       get :sent
   	end
+    collection do
+      post :feedback
+    end
   end
   
   get 'users/autocomplete_user_username'
