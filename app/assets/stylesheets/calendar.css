@@ -1,0 +1,13 @@
+.simple-calendar .day{height: auto !important;}
+
+.simple-calendar th{text-align: center !important;}
+
+.calendar-heading{
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  padding: 5px 5px 8px 5px;
+}
+
+.event-title{color: green; font-weight: bold;}
+
+.simple-calendar td{vertical-align: middle !important;}

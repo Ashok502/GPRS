@@ -5,22 +5,24 @@
   <div class="panel-body">
     <div id="category_errors"></div>
     <div id="category"></div>
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th class="text-center">Name</th>
-          <th class="text-center">Products</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @categories.each do |category| %>
-        <tr id="category_<%= category.id %>">
-          <td><%= category.name %></td>
-          <td><%= category.products.count %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Products</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr id="category_<%= category.id %>">
+            <td><%= category.name %></td>
+            <td><%= category.products.count %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="pull-right">
       <%= will_paginate @categories, param_name: 'category_page', page_links: false, previous_label: "❮", next_label: "❯" %>
     </div>

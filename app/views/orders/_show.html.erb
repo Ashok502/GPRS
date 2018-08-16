@@ -59,26 +59,28 @@
         <hr class="my-5">
         <div class="row p-5">
           <div class="col-md-12">
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th class="text-center">Item</th>
-                  <th class="text-center">Quantity</th>
-                  <th class="text-center">Unit Cost</th>
-                  <th class="text-center">Total</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @order.cart.line_items.each do |item| %>
-                <tr>
-                  <td class="text-center"><%= link_to item.product.title, product_path(item.product), remote: true %></td>
-                  <td class="text-center"><%= item.quantity %></td>
-                  <td class="text-center"><%= number_to_currency(item.unit_price) %></td>
-                  <td class="text-center"><%= number_to_currency(item.full_price) %></td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th class="text-center">Item</th>
+                    <th class="text-center">Quantity</th>
+                    <th class="text-center">Unit Cost</th>
+                    <th class="text-center">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @order.cart.line_items.each do |item| %>
+                  <tr>
+                    <td class="text-center"><%= link_to item.product.title, product_path(item.product), remote: true %></td>
+                    <td class="text-center"><%= item.quantity %></td>
+                    <td class="text-center"><%= number_to_currency(item.unit_price) %></td>
+                    <td class="text-center"><%= number_to_currency(item.full_price) %></td>
+                  </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
         <div class="d-flex flex-row-reverse bg-dark text-white p-4">

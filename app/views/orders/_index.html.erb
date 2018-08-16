@@ -5,28 +5,30 @@
   <div class="panel-body">
     <div id="product_errors"></div>
     <div id="product"></div>
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th class="text-center">ID</th>
-          <th class="text-center">Name</th>
-          <th class="text-center">E-mail</th>
-          <th class="text-center">Amount</th>
-          <th class="text-center">Authorization</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @orders.each do |order| %>
-        <tr>
-          <td><%= link_to "Order-#{order.id}", order_path(order), remote: true %></td>
-          <td><%= order.first_name %></td>
-          <td><%= order.user.email %></td>
-          <td><%= number_to_currency(order.amount) %></td>
-          <td><%= order.authorization %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="text-center">ID</th>
+            <th class="text-center">Name</th>
+            <th class="text-center">E-mail</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Authorization</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @orders.each do |order| %>
+          <tr>
+            <td><%= link_to "Order-#{order.id}", order_path(order), remote: true %></td>
+            <td><%= order.first_name %></td>
+            <td><%= order.user.email %></td>
+            <td><%= number_to_currency(order.amount) %></td>
+            <td><%= order.authorization %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="pull-right">
       <%= will_paginate @orders, page_links: false, param_name: 'order_page', previous_label: "❮", next_label: "❯" %>
     </div>

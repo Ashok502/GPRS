@@ -1,0 +1,6 @@
+<% if !@event.errors.present? %>
+  $("#events_calendar").html("<%= escape_javascript render(partial: '/layouts/calendar', locals: {events: @events}) %>");
+  $("#event_start_date, #event_end_date, #event_date").val("");
+<% else %>
+  $("#event_errors").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @event}%>');
+<% end %>

@@ -5,30 +5,32 @@
 	<div class="panel-body">
 		<div id="product_errors"></div>
 		<div id="product"></div>
-		<table class="table table-bordered text-center">
-			<thead>
-				<tr>
-					<th class="text-center">Title</th>
-					<th class="text-center">Category</th>
-					<th class="text-center">Price</th>
-					<th class="text-center">Quantity</th>
-					<th class="text-center">Actions</th>
-				</tr>
-			</thead>
-			<tbody>
-				<% @products.each do |product| %>
-				<tr id="product_<%= product.id %>">
-					<td><%= link_to product.title, product_path(product), remote: true %></td>
-					<td><%= product.category.name %></td>
-					<td><%= number_to_currency(product.price) %></td>
-					<td><%= product.quantity %></td>
-					<td>
-						<%= link_to "Add to Cart", add_to_cart_product_path(product, quantity: 1), remote: true, class: 'btn btn-default btn-xs' %>
-					</td>
-				</tr>
-				<% end %>
-			</tbody>
-		</table>
+		<div class="table-responsive">
+			<table class="table table-bordered text-center">
+				<thead>
+					<tr>
+						<th class="text-center">Title</th>
+						<th class="text-center">Category</th>
+						<th class="text-center">Price</th>
+						<th class="text-center">Quantity</th>
+						<th class="text-center">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @products.each do |product| %>
+					<tr id="product_<%= product.id %>">
+						<td><%= link_to product.title, product_path(product), remote: true %></td>
+						<td><%= product.category.name %></td>
+						<td><%= number_to_currency(product.price) %></td>
+						<td><%= product.quantity %></td>
+						<td>
+							<%= link_to "Add to Cart", add_to_cart_product_path(product, quantity: 1), remote: true, class: 'btn btn-default btn-xs' %>
+						</td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
 		<div class="pull-right">
 			<%= will_paginate @products, page_links: false, param_name: 'product_page', previous_label: "❮", next_label: "❯" %>
 		</div>    

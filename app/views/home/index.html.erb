@@ -1,11 +1,14 @@
 <% if current_user %>
-  <%= render partial: "/layouts/graph" %>
-  <%= render partial: '/galleries/gallery' %>
-  <%= render partial: "/layouts/search" %>
-<div id="posts">
-  <%= render partial: "/posts/index" %>
+<div id="events_calendar">
+	<%= render partial: "/layouts/calendar", locals: {events: @events} %>
 </div>
-  <%= will_paginate @posts %>
+<%= render partial: "/layouts/graph" %>
+<%= render partial: '/galleries/gallery' %>
+<%= render partial: "/layouts/search" %>
+<div id="posts">
+	<%= render partial: "/posts/index" %>
+</div>
+<%= will_paginate @posts %>
 <% else %>
-  <%= render partial: "/layouts/slider" %>
+<%= render partial: "/layouts/slider" %>
 <% end %>

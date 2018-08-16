@@ -1,14 +1,17 @@
 <% if current_user %>
 <div class="modal fade" id="ChangePassword" tabindex="-1" role="dialog" aria-hidden="true">
-  <%= render partial: "/profiles/password" %>
+	<%= render partial: "/profiles/password" %>
+</div>
+<div class="modal fade" id="NewEvent" tabindex="-1" role="dialog" aria-hidden="true">
+	<%= render partial: "/events/new" %>
 </div>
 <div class="modal fade" id="ChangeProfile" tabindex="-1" role="dialog" aria-hidden="true">
-  <%= render partial: "/profiles/profile" %>
+	<%= render partial: "/profiles/profile" %>
 </div>
 <div class="modal fade" id="Gallery" tabindex="-1" role="dialog" aria-hidden="true">
-  <%= render partial: "/galleries/new" %>
+	<%= render partial: "/galleries/new" %>
 </div>
 <% end %>
 <div class="modal fade" id="ProductDetail" tabindex="-1" role="dialog" aria-hidden="true">
-  <div id="product_detail"></div>
+	<div id="product_detail"></div>
 </div>

@@ -3,27 +3,29 @@
     Users
   </div>
   <div class="panel-body">
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th class="text-center">UserName</th>
-          <th class="text-center">Email</th>
-          <th class="text-center">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-        <tr>
-          <td><%= user.username %></td>
-          <td><%= user.email %></td>
-          <td>
-            <%= link_to "edit", " ", remote: true, class: 'btn btn-warning btn-xs' %>
-            <%= link_to "delete", " ", method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="text-center">UserName</th>
+            <th class="text-center">Email</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @users.each do |user| %>
+          <tr>
+            <td><%= user.username %></td>
+            <td><%= user.email %></td>
+            <td>
+              <%= link_to "edit", "#", remote: true, class: 'btn btn-warning btn-xs' %>
+              <%= link_to "delete", "#", method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="pull-right">
       <%= will_paginate @users, page_links: false, param_name: 'user_page', previous_label: "❮", next_label: "❯" %>
     </div>

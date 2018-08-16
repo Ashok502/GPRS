@@ -17,12 +17,13 @@
  *= require dropzone/dropzone
  *= require fancybox
  *= require 'timepiece'
+ *= require simple_calendar
  */
 
- body{
- 	background-image: url(/assets/background.jpeg);
+body{
+  background-image: url(/assets/background.jpeg);
   background-size: cover;
- }
+}
 
  .modal-dialog{width: auto;}
 

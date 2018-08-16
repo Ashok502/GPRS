@@ -4,26 +4,28 @@
   </div>
   <div class="panel-body">
     <b class="pull-right">Status: <span style="color: red;">shipped, delivered, completed</span></b>
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th class="text-center">Name</th>
-          <th class="text-center">Amount</th>
-          <th class="text-center">Authorization</th>
-          <th class="text-center">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @invoices.each do |order| %>
-        <tr>
-          <td><%= order.first_name + ' ' + order.last_name %></td>
-          <td><%= number_to_currency(order.amount) %></td>
-          <td><%= link_to order.authorization, order_path(order), remote: true %></td>
-          <td><%= best_in_place order, :status %></td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Name</th>
+            <th class="text-center">Amount</th>
+            <th class="text-center">Authorization</th>
+            <th class="text-center">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @invoices.each do |order| %>
+          <tr>
+            <td><%= order.first_name + ' ' + order.last_name %></td>
+            <td><%= number_to_currency(order.amount) %></td>
+            <td><%= link_to order.authorization, order_path(order), remote: true %></td>
+            <td><%= best_in_place order, :status %></td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="pull-right">
       <%= will_paginate @invoices, page_links: false, param_name: 'order_page', previous_label: "❮", next_label: "❯" %>
     </div>

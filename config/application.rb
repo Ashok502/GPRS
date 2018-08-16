@@ -11,6 +11,8 @@ module Gprs
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.assets.initialize_on_precompile = false
+    config.time_zone = 'Asia/Kolkata'
+    config.beginning_of_week = :sunday
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers

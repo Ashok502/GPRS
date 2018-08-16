@@ -6,33 +6,35 @@
   <div class="panel-body">
     <div id="coupon_errors"></div>
     <div id="coupon"></div>
-    <table class="table table-bordered text-center">
-      <thead>
-        <tr>
-          <th class="text-center">Code</th>
-          <th class="text-center">Percentage</th>
-          <th class="text-center">Status</th>
-          <th class="text-center">Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @coupons.each do |coupon| %>
-        <tr id="coupon_<%= coupon.id %>">
-          <td><%= coupon.coupon_code %></td>
-          <td><%= coupon.percentage %></td>
-          <td><%= coupon.status %></td>
-          <td>
-            <% if coupon.status == 'New' %>
-            <%= link_to "edit", edit_coupon_path(coupon), remote: true, class: 'btn btn-warning btn-xs' %>
-            <%= link_to "delete", coupon_path(coupon), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
-            <% else %>
-            <%= "--" %>
-            <% end %>
-          </td>
-        </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th class="text-center">Code</th>
+            <th class="text-center">Percentage</th>
+            <th class="text-center">Status</th>
+            <th class="text-center">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @coupons.each do |coupon| %>
+          <tr id="coupon_<%= coupon.id %>">
+            <td><%= coupon.coupon_code %></td>
+            <td><%= coupon.percentage %></td>
+            <td><%= coupon.status %></td>
+            <td>
+              <% if coupon.status == 'New' %>
+              <%= link_to "edit", edit_coupon_path(coupon), remote: true, class: 'btn btn-warning btn-xs' %>
+              <%= link_to "delete", coupon_path(coupon), method: :delete, data: {confirm: "Are you sure"}, remote: true, class: 'btn btn-danger btn-xs' %>
+              <% else %>
+              <%= "--" %>
+              <% end %>
+            </td>
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
     <div class="pull-right">
       <%= will_paginate @coupons, param_name: 'coupon_page', page_links: false, previous_label: "❮", next_label: "❯" %>
     </div>
