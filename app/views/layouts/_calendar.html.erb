@@ -1,15 +1,16 @@
 <div class="panel panel-default text-left">
 	<div class="panel-heading">
-		Events
+		My Events
+		<%= link_to "Add Event", new_event_path, remote: true, class: 'btn btn-primary btn-xs pull-right' %>
 	</div>
 	<div class="panel-body">
 		<%= month_calendar(events: @events, attribute: :start_date, end_attribute: :end_date) do |date, meetings| %>
-		<%= link_to date, "#", 'data-toggle' => 'modal','data-target' => '#NewEvent' %>
-		<% meetings.each do |meeting| %>
-		<div class="event-title">
-			<%= meeting.title %>
-		</div>
+		<% if meetings.present? %>
+		<%= link_to date, my_events_events_path(start: meetings.first.start_date, end: meetings.first.end_date), remote: true %>
+		<% else %>
+		<% date %>
 		<% end %>
 		<% end %>
+		<div id="my_events"></div>
 	</div>
 </div>

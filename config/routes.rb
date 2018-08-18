@@ -20,12 +20,18 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :intrests, :ads, :profiles, :galleries, :categories, :orders, :events
+  resources :intrests, :ads, :profiles, :galleries, :categories, :orders
 
   resources :cities, only: :index
   resources :states, only: :index
 
   resources :dashboards, only: ['index']
+
+  resources :events do
+    collection do
+      get :my_events
+    end
+  end
 
   resources :coupons do
     collection do
