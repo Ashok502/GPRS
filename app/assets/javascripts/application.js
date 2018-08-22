@@ -27,7 +27,6 @@
 //= require highcharts
 //= require chartkick
 //= require best_in_place
-//= require timepiece
 //= require star-rating
 //= require_tree .
 

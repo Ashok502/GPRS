@@ -33,7 +33,6 @@ gem 'activemerchant', :require => 'active_merchant'
 gem 'best_in_place'
 gem 'geocoder'
 gem 'city-state'
-gem 'timepiece'
 gem "simple_calendar", "~> 2.0"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
