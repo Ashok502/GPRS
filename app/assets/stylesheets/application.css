@@ -16,6 +16,7 @@
  *= require jquery.minicolors
  *= require dropzone/dropzone
  *= require fancybox
+ *= require 'timepiece'
  *= require simple_calendar
  */
 

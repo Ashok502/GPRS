@@ -860,6 +860,8 @@ GEM
     thor (0.20.0)
     thread_safe (0.3.6)
     tilt (2.0.8)
+    timepiece (0.4.1)
+      jquery-rails (>= 3.0.0)
     tinymce-rails (4.8.0)
       railties (>= 3.1.1)
     tinymce-rails-imageupload (4.0.17.beta.3)
@@ -934,6 +936,7 @@ DEPENDENCIES
   simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
+  timepiece
   tinymce-rails
   tinymce-rails-imageupload (~> 4.0.0.beta)
   turbolinks (~> 5)
