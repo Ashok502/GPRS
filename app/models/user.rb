@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
   :recoverable, :rememberable, :trackable, :validatable
 
+  devise :omniauthable, :omniauth_providers => [:facebook, :twitter]
+
   has_attached_file :avatar, default_url: "/assets/avatar.png"
   validates_attachment_content_type :avatar,
   :content_type => [ 'image/jpeg','image/jpg', 'image/png', 'image/gif','image/bmp', 'image/x-png', 'image/pjpeg' ]
@@ -55,6 +57,14 @@ class User < ApplicationRecord
 
   def is_offline
     self.update_attributes(online: false)
+  end
+
+  def self.from_omniauth(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.username = auth.info.name
+    end
   end
 
 end

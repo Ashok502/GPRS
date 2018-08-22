@@ -2,11 +2,11 @@
   <div class="panel panel-default">
     <div class="panel-heading">
       <strong>Login</strong>
+      <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: 'btn btn-primary btn-xs pull-right' %>
     </div>
     <div class="panel-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <fieldset>
-
         <div class="form-group">
           <div class="input-group">
             <span class="input-group-addon">
