@@ -20,9 +20,13 @@
  *= require simple_calendar
  */
 
+ @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
  body{
   background-image: url(/assets/background.jpeg);
   background-size: cover;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
 }
 
 .modal-dialog{width: auto;}

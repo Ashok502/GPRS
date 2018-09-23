@@ -82,6 +82,13 @@ $(function(){
   $("#feedback-tab").click(function() {
     $("#feedback-form").toggle("slide");
   });
+
+  window.emojiPicker = new EmojiPicker({
+    emojiable_selector: '[data-emojiable=true]',
+    assetsPath: '../lib/img/',
+    popupButtonClasses: 'fa fa-smile-o'
+  });
+  window.emojiPicker.discover();
   
 });
 

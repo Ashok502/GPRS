@@ -1,8 +1,11 @@
-$('#posts').append('<%= j render partial: "/posts/index" %>');
+<% if params[:start_date] %>
 $("#events_calendar").html("<%= escape_javascript render(partial: '/layouts/calendar', locals: {events: @events}) %>");
+<% else %>
+$('#posts').append('<%= j render partial: "/posts/index" %>');
 <% if @posts.next_page %>
 $('.pagination').replaceWith('<%= j will_paginate(@posts) %>');
 <% else %>
 $('.pagination').remove();
 <% end %>
 sleep(10);
+<% end %>
