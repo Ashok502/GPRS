@@ -9,7 +9,8 @@ class User < ApplicationRecord
   has_attached_file :avatar, default_url: "/assets/avatar.png"
   validates_attachment_content_type :avatar,
   :content_type => [ 'image/jpeg','image/jpg', 'image/png', 'image/gif','image/bmp', 'image/x-png', 'image/pjpeg' ]
-
+  
+  # validates :online, inclusion: [true, false]
   has_many :posts, dependent: :destroy
   has_many :intrests, dependent: :destroy
   has_many :ads, dependent: :destroy
@@ -28,6 +29,7 @@ class User < ApplicationRecord
   before_save :limit_intrests?, :limit_ads?
   geocoded_by :address?
   after_validation :geocode, :if => :city_changed?
+  # after_create :notify_pusher
 
   scope :search, -> (search, user) { where("username ilike (?) AND id NOT IN (?)", "#{search}%", user)}
 
@@ -67,4 +69,12 @@ class User < ApplicationRecord
     end
   end
 
+  # def notify_pusher
+  #   Pusher.trigger('activity', 'login', self.as_json)
+  # end
+
+  # def as_json(options={})
+  #   super(only: [:id, :email, :username])
+  # end
+  
 end

@@ -16,6 +16,7 @@
 //= require jquery.remotipart
 //= require activestorage
 //= require turbolinks
+//= require popper
 //= require twitter/bootstrap
 //= require tinymce
 //= require jquery-ui

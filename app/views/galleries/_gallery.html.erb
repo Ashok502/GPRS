@@ -3,6 +3,7 @@
 		Gallery
 		<%= link_to "Add Gallery", "#", 'data-toggle' => 'modal', 'data-target' => "#Gallery", class: 'btn btn-primary btn-xs pull-right' %>
 	</div>
+	<% if @galleries.present? %>
 	<div class="panel-body">    
 		<div class="user-friend-list">
 			<div class="carousel slide" data-type="multi" id="myCarousel">
@@ -23,5 +24,6 @@
 				</a>
 			</div>
 		</div>
-	</div> 
+	</div>
+	<% end %> 
 </div>

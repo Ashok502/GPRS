@@ -170,13 +170,19 @@ textarea{resize: none;}
   padding: 0 10px;
 }
 
+#fancybox-close{
+  top: -10px !important;
+  right: -30px !important;
+}
+
 .footer {
- position: fixed;
+ position: relative;
  bottom: 0;
  width: 100%;
  background-color: #222;
  color: #fff;
  text-align: center;
- padding-top: 8px;
+ padding-top: 12px;
+ padding-bottom: 1px;
  border-top: 1px solid #080808;
 }
