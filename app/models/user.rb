@@ -10,7 +10,6 @@ class User < ApplicationRecord
   validates_attachment_content_type :avatar,
   :content_type => [ 'image/jpeg','image/jpg', 'image/png', 'image/gif','image/bmp', 'image/x-png', 'image/pjpeg' ]
   
-  # validates :online, inclusion: [true, false]
   has_many :posts, dependent: :destroy
   has_many :intrests, dependent: :destroy
   has_many :ads, dependent: :destroy
@@ -24,12 +23,14 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :events, dependent: :destroy
 
-  validates :username, :country, :state, :city, :pincode, :address, presence: true, uniqueness: true, on: :update
+  validates :username, presence: true, uniqueness: true, on: :update
+
+  validates :country, :state, :city, :pincode, :address, presence: true, on: :update
 
   before_save :limit_intrests?, :limit_ads?
   geocoded_by :address?
   after_validation :geocode, :if => :city_changed?
-  # after_create :notify_pusher
+  after_update_commit {AppearanceBroadcastJob.perform_later self}
 
   scope :search, -> (search, user) { where("username ilike (?) AND id NOT IN (?)", "#{search}%", user)}
 
@@ -45,20 +46,8 @@ class User < ApplicationRecord
     self.galleries.count
   end
 
-  def online?
-    updated_at > 10.minutes.ago
-  end
-
   def limit_ads?
     self.ads.count
-  end
-
-  def is_online
-    self.update_attributes(online: true)
-  end
-
-  def is_offline
-    self.update_attributes(online: false)
   end
 
   def self.from_omniauth(auth)
@@ -68,13 +57,4 @@ class User < ApplicationRecord
       user.username = auth.info.name
     end
   end
-
-  # def notify_pusher
-  #   Pusher.trigger('activity', 'login', self.as_json)
-  # end
-
-  # def as_json(options={})
-  #   super(only: [:id, :email, :username])
-  # end
-  
 end

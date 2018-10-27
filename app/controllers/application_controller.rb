@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   helper :all
   helper_method :current_cart
-  before_action :user_status?, if: proc { user_signed_in? }
   before_action :all_actions, if: proc { user_signed_in? }
 
   def is_login?
@@ -52,10 +51,5 @@ class ApplicationController < ActionController::Base
     @users = User.where.not(id: current_user, role: 'admin').order("updated_at desc")
     @orders = current_user.orders.where(success: true).page(params[:order_page]).per_page(5)
     @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
-  end
-
-  private
-  def user_status?
-    current_user.update_attribute(:updated_at, Time.current)
   end
 end

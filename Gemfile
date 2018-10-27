@@ -11,7 +11,6 @@ gem 'devise'
 gem 'paperclip'
 
 gem "twitter-bootstrap-rails"
-gem 'bootstrap', '~> 4.1.0'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'jquery-rails'
@@ -38,7 +37,6 @@ gem 'timepiece'
 gem "simple_calendar", "~> 2.0"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
-gem 'pusher'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets

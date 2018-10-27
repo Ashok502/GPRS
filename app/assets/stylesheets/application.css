@@ -184,3 +184,6 @@ textarea{resize: none;}
  padding-bottom: 1px;
  border-top: 1px solid #080808;
 }
+
+.online{color: green;}
+.offline{color: lightgray;}
