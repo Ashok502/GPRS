@@ -4,10 +4,10 @@ App.appearance = App.cable.subscriptions.create({
   received: function(data) {
     var user = JSON.parse(data)
     if (user.online === true){
-      $(userImgIdConstructor(user)).attr('class', 'online fa fa-circle');
+      $(userImgIdConstructor(user)).attr('class', 'online');
     };
     if (user.online === false){
-      $(userImgIdConstructor(user)).attr('class', 'offline fa fa-circle');
+      $(userImgIdConstructor(user)).attr('class', 'offline');
     };
   }
 });
