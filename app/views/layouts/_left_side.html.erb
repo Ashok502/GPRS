@@ -15,8 +15,12 @@
     </div>
   </div>
   <ul class="list-group">
-    <li class="list-group-item text-muted">
+    <li class="list-group-item">
       Activity
+    </li>
+    <li class="list-group-item text-right">
+      <span class="pull-left"><strong class="">Followers</strong></span>
+      <span class="label label-danger"> <%= current_user.received_requests.count %></span>
     </li>
     <li class="list-group-item text-right">
       <span class="pull-left"><strong class="">Posts</strong></span>
@@ -25,14 +29,6 @@
     <li class="list-group-item text-right">
       <span class="pull-left"><strong class="">Orders</strong></span>
       <span class="label label-default"> <%= @orders.count %> </span>
-    </li>
-    <li class="list-group-item text-right">
-      <span class="pull-left"><strong class="">Likes</strong></span>
-      <span class="label label-primary"> 20 </span>
-    </li>
-    <li class="list-group-item text-right">
-      <span class="pull-left"><strong class="">Followers</strong></span>
-      <span class="label label-danger"> <%= current_user.received_requests.count %></span>
     </li>
   </ul> 
   <div class="panel panel-default text-center">
