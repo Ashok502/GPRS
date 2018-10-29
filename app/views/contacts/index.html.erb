@@ -1,0 +1,31 @@
+<div class="panel panel-default text-left">
+	<div class="panel-heading">
+		Import Contacts
+		<%= link_to "Yahoo", "/contacts/yahoo", class: 'btn btn-danger btn-xs pull-right' %>
+		<%= link_to "Gmail", "/contacts/gmail", class: 'btn btn-primary btn-xs pull-right gmail-contact' %>
+	</div>
+	<% if @contacts %>
+	<div class="panel-body">
+		<div id="product_errors"></div>
+		<div id="product"></div>
+		<div class="table-responsive">
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th class="text-center">Name</th>
+						<th class="text-center">E-mail</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% @contacts.each do |c| %>
+					<tr>
+						<td><%= c[:name] %></td>
+						<td><%= c[:email] %></td>
+					</tr>
+					<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<% end %> 
+</div>

@@ -37,6 +37,8 @@ gem 'timepiece'
 gem "simple_calendar", "~> 2.0"
 gem 'omniauth-facebook'
 gem 'omniauth-twitter'
+gem "omnicontacts"
+gem 'thin'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
