@@ -6,9 +6,4 @@ test:
 
 production:
   adapter: redis
-  url:     ENV["REDIS_URL"]
-  host: ENV["RHOST"]
-  port: ENV["RPORT"]
-  password: ENV["RPWD"]
-  inline: true
-  timeout: 1
+  url: redis://h:p8982b10ff93aa7d8ae807208a51415596df4aef6dd619f588530f991f8e9d42c@ec2-18-214-203-215.compute-1.amazonaws.com:51899
