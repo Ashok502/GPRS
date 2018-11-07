@@ -6,5 +6,9 @@ test:
 
 production:
   adapter: redis
-  url: <%= ENV.fetch("REDIS_URL") { "redis://localhost:6379/1" } %>
-  channel_prefix: Gprs_production
+  url:     ENV["REDIS_URL"]
+  host: ENV["RHOST"]
+  port: ENV["RPORT"]
+  password: ENV["RPWD"]
+  inline: true
+  timeout: 1

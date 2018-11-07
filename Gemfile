@@ -14,7 +14,6 @@ gem "twitter-bootstrap-rails"
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', '~> 4.0.0.beta'
 gem 'jquery-rails'
-gem 'whenever', require: false
 gem "font-awesome-rails"
 gem 'remotipart'
 gem 'rails-jquery-autocomplete'
@@ -55,7 +54,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
