@@ -1,6 +1,6 @@
 Rails.application.configure do
   config.action_cable.url = 'ws://gprs-test.herokuapp.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://gprs-test.herokuapp.com/']
+  config.action_cable.allowed_request_origins = [ 'https://gprs-test.herokuapp.com/']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
