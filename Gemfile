@@ -38,6 +38,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-twitter'
 gem "omnicontacts"
 gem 'thin'
+gem 'newrelic_rpm'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
