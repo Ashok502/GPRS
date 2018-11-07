@@ -940,6 +940,7 @@ DEPENDENCIES
   pg
   puma (~> 3.11)
   rails (~> 5.2.0)
+  redis (~> 4.0)
   rails-jquery-autocomplete
   remotipart
   sass-rails (~> 5.0)
