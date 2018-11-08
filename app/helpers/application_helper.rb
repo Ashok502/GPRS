@@ -19,7 +19,7 @@ module ApplicationHelper
 	end
 
 	def user_profile_path(user)
-		link_to user.username, profile_path(user), remote: true
+		link_to user.username, profile_path(user), remote: true, id: "show_user"
 	end
 
 	def loader_button(btn)
