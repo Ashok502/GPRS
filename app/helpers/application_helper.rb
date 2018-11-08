@@ -25,4 +25,8 @@ module ApplicationHelper
 	def loader_button(btn)
 		btn.button "Submit", class: 'btn btn-primary', data: {disable_with: "<i class='fa fa-spinner fa-spin'></i> Submit"}
 	end
+	
+	def google_map(center)
+          "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
+        end
 end
