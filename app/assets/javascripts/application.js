@@ -94,6 +94,11 @@ $(function(){
 
 $(document).ready(function(){
   $(".fancybox").fancybox();
+  
+  $("#show_user").click(function(){
+    $('html, body').animate({scrollTop:0}, 'slow');
+    return false;
+  });
 
   Dropzone.autoDiscover = true;
   $("#new_gallery").dropzone({
