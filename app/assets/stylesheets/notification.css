@@ -31,3 +31,12 @@
 	border: 1px solid #ccc;
 	border-radius:4px;
 }
+
+#notificationList li{
+  padding: 10px;
+  border-top: 1px solid lightgray;
+}
+
+#notificationList li:first-child{
+	border-bottom: none;
+}

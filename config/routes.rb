@@ -23,7 +23,7 @@ Rails.application.routes.draw do
     resources :comments
   end
   
-  resources :intrests, :ads, :profiles, :galleries, :categories, :orders
+  resources :intrests, :ads, :profiles, :galleries, :categories, :orders, :notifications, :chatrooms, :chat_messages
 
   resources :cities, only: :index
   resources :states, only: :index

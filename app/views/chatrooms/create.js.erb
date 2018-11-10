@@ -1,0 +1,5 @@
+<% if !@chatroom.errors.present? %>
+  $("#chatrooms").html('<%= escape_javascript render partial: "index" %>');
+<% else %>
+  $("#chatroom_errors").html('<%= escape_javascript render partial: "/layouts/errors", locals: {resource: @chatroom}%>');
+<% end %>

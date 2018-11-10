@@ -24,6 +24,7 @@
         <li class="top-link"><%= link_to "Products", products_path, remote: true %></li> 
         <li class="top-link"><%= link_to "Orders", orders_path, remote: true %></li> 
         <li class="top-link"><%= link_to "Contacts", contacts_path %></li> 
+        <li class="top-link"><%= link_to "Room", chatrooms_path %></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
@@ -34,9 +35,11 @@
         <li class="dropdown notification top-link">
           <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">
             <i class="fa fa-bell fa-lg"></i>
-            <sup class="count">0</sup>
+            <sup id="notification-counter" class="count"><%= @notifications.count %></sup>
           </a>
-          <%#= render partial: "/layouts/notifications" %>
+          <ul class="dropdown-menu dropdown-cart" role="menu">
+            <%= render "/notifications/notification_center", notifications: @notifications %>
+          </ul>
         </li>
         <li class="dropdown total-cart top-link">
           <a id="dLabel" role="button" data-toggle="dropdown" data-target="#" href="#">

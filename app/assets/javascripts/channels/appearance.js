@@ -4,14 +4,20 @@ App.appearance = App.cable.subscriptions.create({
   received: function(data) {
     var user = JSON.parse(data)
     if (user.online === true){
-      $(userImgIdConstructor(user)).attr('class', 'online');
+      $(userStatusConstructor(user)).attr('class', 'online');
+      $(userChatConstructor(user)).attr('class', 'online');
     };
     if (user.online === false){
-      $(userImgIdConstructor(user)).attr('class', 'offline');
+      $(userStatusConstructor(user)).attr('class', 'offline');
+      $(userChatConstructor(user)).attr('class', 'offline');
     };
   }
 });
 
-var userImgIdConstructor = function(user){
+var userStatusConstructor = function(user){
   return "#" + user.id + "-status";
+}
+
+var userChatConstructor = function(user){
+  return "#" + user.id + "-chat-status";
 }

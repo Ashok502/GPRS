@@ -1,0 +1,39 @@
+<div class="panel panel-default text-left">
+  <div class="panel-heading">
+    <%= @chatroom.name %>
+  </div>
+  <div class="panel-body">
+    <div class="col-sm-3">
+      Group Users
+      <hr />
+      <ul id="users-list">
+        <% @chatroom_users.each do |user| %>
+        <li>
+          <span id="<%= user.user.id %>-chat-status" class="<%= user.user.online ? 'online' : 'offline' %>"></span>
+          <%= user.user.username %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="col-sm-9">
+      Chat
+      <hr />
+      <% unread_messages = false %>
+      <div data-behavior='chat_messages' data-chatroom-id='<%= @chatroom.id %>' class="group-chat">
+        <% @messages.each do |message| %>
+        <% if !unread_messages && @chatroom_user.last_read_at < message.created_at %>
+        <% unread_messages = true %>
+        <div class="strike"><span>Unread Messages</span></div>
+        <% end %>
+        <ul class="chat_messages chat">
+          <%= render partial: 'chat_messages/chat_message', locals: {message: message} %>
+        </ul>
+        <% end %>
+      </div>
+
+      <%= form_for @message do |f| %>
+      <%= f.text_field :body, placeholder: "Message", class: "form-control", autofocus: true %>
+      <% end %>
+    </div>
+  </div>
+</div>

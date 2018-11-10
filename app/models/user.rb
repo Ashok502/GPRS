@@ -22,6 +22,9 @@ class User < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :orders, dependent: :destroy
   has_many :events, dependent: :destroy
+  has_many :chatroom_users
+  has_many :chatrooms, through: :chatroom_users
+  has_many :chat_messages
 
   validates :username, presence: true, uniqueness: true, on: :update
 
