@@ -1,7 +1,7 @@
 handleVisiblityChange = ->
     $strike = $(".strike")
     if $strike.length > 0
-      chatroom_id = $("[data-behavior='messages']").data("chatroom-id")
+      chatroom_id = $("[data-behavior='chat_messages']").data("chatroom-id")
       App.last_read.update(chatroom_id)
       $strike.remove()
 

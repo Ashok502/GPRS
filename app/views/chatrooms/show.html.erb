@@ -2,10 +2,8 @@
   <div class="panel-heading">
     <%= @chatroom.name %>
   </div>
-  <div class="panel-body">
-    <div class="col-sm-3">
-      Group Users
-      <hr />
+  <div class="panel-body group-chat">
+    <div class="col-sm-2">
       <ul id="users-list">
         <% @chatroom_users.each do |user| %>
         <li>
@@ -15,7 +13,7 @@
         <% end %>
       </ul>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-10">
       Chat
       <hr />
       <% unread_messages = false %>

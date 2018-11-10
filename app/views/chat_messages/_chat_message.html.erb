@@ -2,9 +2,10 @@
   <div class="row">
     <div class="pull-left">
       <strong><%= message.user.username %></strong> : 
-    </div>
-    <div class="pull-left">
       <%= message.body %>
+    </div>
+    <div class="pull-right">
+      <%= message.created_at.strftime("%d %b. %Y") %>
     </div>
   </div>
 </li>

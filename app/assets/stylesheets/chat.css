@@ -113,3 +113,5 @@ ul{margin-bottom: 0;}
   color: red;
   margin-bottom: 5px;
 }
+
+.group-chat .col-sm-2, .group-chat .col-sm-10{padding: 0;}
