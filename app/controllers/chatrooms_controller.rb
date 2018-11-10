@@ -22,6 +22,13 @@ class ChatroomsController < ApplicationController
 		@message = @chatroom.chat_messages.new
 	end
 
+	def edit
+		@chatroom = Chatroom.find(params[:id])
+		@chatrooms = Chatroom.all
+		@chatroom_user = @chatroom.chatroom_users.where(user_id: current_user.id).destroy_all
+		ajax_submit?
+	end
+
 	def destroy
 		@chatroom = Chatroom.find(params[:id])
 		@chatroom.destroy

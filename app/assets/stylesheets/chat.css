@@ -32,7 +32,7 @@ ul{margin-bottom: 0;}
 }
 
 .group-chat{
-  max-height: 250px;
+  max-height: 550px;
   overflow-y: auto;
   margin-bottom: 10px;
   overflow-x: hidden;
