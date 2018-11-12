@@ -10,8 +10,7 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
     current_user_id = data.current_user_id
     user_id = data.user_id
     active_class = (data.current_user_id == data.user_id)
-    pbclass = (active_class == false) ? 'pull-right' : 'pull-left'
-    pdclass = (active_class == false) ? 'pull-left' : 'pull-right'
+    console.log(active_class)
     if active_chatroom.length > 0
 
       if document.hidden
@@ -22,10 +21,16 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
         App.last_read.update(data.chatroom_id)
 
       # Insert the message
-      active_chatroom.append("<ul class='chat'>
-      <li><div class='row'>
-        <div class='#{pclass}'><strong>#{data.username} : </strong>#{data.body}</div>
-        <div class='#{pdclass}'>#{data.date}</div></div></li></ul>")
+      if active_class == false
+        active_chatroom.append("<ul class='chat'>
+        <li><div class='row'>
+          <div class='pull-left'><strong>#{data.username} : </strong>#{data.body}</div>
+          <div class='pull-right'>#{data.date}</div></div></li></ul>")
+      else
+        active_chatroom.append("<ul class='chat'>
+        <li><div class='row'>
+          <div class='pull-right'><strong>#{data.username} : </strong>#{data.body}</div>
+          <div class='pull-left'>#{data.date}</div></div></li></ul>")
 
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
