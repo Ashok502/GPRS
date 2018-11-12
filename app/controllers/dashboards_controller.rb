@@ -1,4 +1,5 @@
 class DashboardsController < ApplicationController
+	before_action :is_login?
 	def index
 		@categories = Category.page(params[:category_page]).per_page(10)
 		@products = Product.page(params[:product_page]).per_page(10)
