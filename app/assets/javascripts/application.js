@@ -107,3 +107,20 @@ $(document).ready(function(){
     addRemoveLinks: true
   });
 });
+
+$(document).ready(function () {
+  var idleState = false;
+  var idleTimer = null;
+  $('*').bind('mousemove click mouseup mousedown keydown keypress keyup submit change mouseenter scroll resize dblclick', function () {
+    clearTimeout(idleTimer);
+    if (idleState == true) { 
+      console.log("True");           
+    }
+    idleState = false;
+    idleTimer = setTimeout(function () { 
+      console.log("False");
+      idleState = true; }, 2000);
+    });
+    $("body").trigger("mousemove");
+  });
+});
