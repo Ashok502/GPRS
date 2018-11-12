@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-
+    before_action :is_login?
 	def index
 		@chatrooms = Chatroom.all
 		@chatroom = Chatroom.new
