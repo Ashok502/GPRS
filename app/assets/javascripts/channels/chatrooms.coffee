@@ -21,7 +21,7 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
         App.last_read.update(data.chatroom_id)
 
       # Insert the message
-      if active_class == false
+      if active_class == true
         active_chatroom.append("<ul class='chat'>
         <li><div class='row'>
           <div class='pull-left'><strong>#{data.username} : </strong>#{data.body}</div>
