@@ -22,15 +22,13 @@ App.chatrooms = App.cable.subscriptions.create "ChatroomsChannel",
 
       # Insert the message
       if active_class == true
-        active_chatroom.append("<ul class='chat'>
-        <li><div class='row'>
+        active_chatroom.find("ul").append("<li><div class='row'>
           <div class='pull-left'><strong>#{data.username} : </strong>#{data.body}</div>
-          <div class='pull-right'>#{data.date}</div></div></li></ul>")
+          <div class='pull-right'>#{data.date}</div></div></li>")
       else
-        active_chatroom.append("<ul class='chat'>
-        <li><div class='row'>
+        active_chatroom.find("ul").append("<li><div class='row'>
           <div class='pull-right'><strong>#{data.username} : </strong>#{data.body}</div>
-          <div class='pull-left'>#{data.date}</div></div></li></ul>")
+          <div class='pull-left'>#{data.date}</div></div></li>")
 
     else
       $("[data-behavior='chatroom-link'][data-chatroom-id='#{data.chatroom_id}']").css("font-weight", "bold")
