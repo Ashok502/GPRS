@@ -1,10 +1,10 @@
 <li>
   <div class="row">
-    <div class="<%= message.chatroom.user_id == current_user.id ? 'pull-left' : 'pull-right' %>">
+    <div class="<%= message.chatroom.user_id == message.user_id ? 'pull-left' : 'pull-right' %>">
       <strong><%= message.user.username %></strong> : 
       <%= message.body %>
     </div>
-    <div class="<%= message.chatroom.user_id == current_user.id ? 'pull-right' : 'pull-left' %>">
+    <div class="<%= message.chatroom.user_id == message.user_id ? 'pull-right' : 'pull-left' %>">
       <%= message.created_at.strftime("%d %b. %Y") %>
     </div>
   </div>
