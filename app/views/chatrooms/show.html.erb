@@ -18,15 +18,15 @@
       <hr />
       <% unread_messages = false %>
       <div data-behavior='chat_messages' data-chatroom-id='<%= @chatroom.id %>' class="group-chat">
-        <% @messages.each do |message| %>
-        <% if !unread_messages && @chatroom_user.last_read_at < message.created_at %>
-        <% unread_messages = true %>
-        <div class="strike"><span>Unread Messages</span></div>
-        <% end %>
         <ul class="chat_messages chat">
-          <%= render partial: 'chat_messages/chat_message', locals: {message: message} %>
+          <% @messages.each do |message| %>
+            <% if !unread_messages && @chatroom_user.last_read_at < message.created_at %>
+              <% unread_messages = true %>
+              <div class="strike"><span>Unread Messages</span></div>
+            <% end %>        
+            <%= render partial: 'chat_messages/chat_message', locals: {message: message} %>        
+          <% end %>
         </ul>
-        <% end %>
       </div>
 
       <%= form_for @message do |f| %>
