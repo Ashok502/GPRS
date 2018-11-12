@@ -1,10 +1,10 @@
 <li>
   <div class="row">
-    <div class="pull-left">
+    <div class="<%= message.user.id == current_user.id ? 'pull-left' : 'pull-right' %>">
       <strong><%= message.user.username %></strong> : 
       <%= message.body %>
     </div>
-    <div class="pull-right">
+    <div class="<%= message.user.id == current_user.id ? 'pull-right' : 'pull-left' %>">
       <%= message.created_at.strftime("%d %b. %Y") %>
     </div>
   </div>
