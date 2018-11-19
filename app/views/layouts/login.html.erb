@@ -7,9 +7,9 @@
   <title><%= content_for?(:title) ? yield(:title) : "Gprs" %></title>
   <%= csrf_meta_tags %>
 
-  <%= stylesheet_link_tag "application", :media => "all" %>   
+  <%= stylesheet_link_tag "#{ENV['SITE']}/application", :media => "all" %>   
 
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "#{ENV['SITE']}/application" %>
 </head>
 <body>
   <nav class="navbar navbar-inverse navbar-fixed-top">
