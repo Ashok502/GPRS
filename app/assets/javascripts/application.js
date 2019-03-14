@@ -15,7 +15,6 @@
 //= require jquery_ujs
 //= require jquery.remotipart
 //= require activestorage
-//= require turbolinks
 //= require twitter/bootstrap
 //= require tinymce
 //= require jquery-ui

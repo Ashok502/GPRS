@@ -29,7 +29,7 @@
 
 .modal-dialog{width: auto;}
 
-.container .jumbotron{padding: 10px;margin-top: 60px; margin-bottom: 10px;}
+.container .jumbotron{padding: 10px;margin-top: 60px; margin-bottom: 10px;background: transparent;}
 
 ul, ol{padding-left: 0;}
 

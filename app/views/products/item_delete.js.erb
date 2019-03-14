@@ -1,3 +1,4 @@
 $(".dropdown-cart").html('<%= escape_javascript render partial: "/layouts/cart" %>');
 $(".cart-count").html("<%= current_cart.line_items.count %>")
 $(".total-cart").addClass('open');
+$("#cart_expires").html('<%= escape_javascript render partial: "/layouts/cart_count" %>')
