@@ -2,7 +2,7 @@
 <% if @products.present? %>
 <div class="row text-left"> 
 	<% @products.each do |product| %>
-	<div class="col-lg-3 product-box">
+	<div class="col-md-3 product-box">
 		<div class="card">
 			<%= link_to image_tag(product.logos.first.logo.url, class: "card-img-top"), product_path(product), remote: true %>
 			<div class="card-body">

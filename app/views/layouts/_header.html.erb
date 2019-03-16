@@ -20,11 +20,10 @@
       </div>
       <% end %> 
       <ul class="nav navbar-nav navbar-left">
-        <li class="top-link"><%= link_to "Categories", categories_path, remote: true %></li>
         <li class="top-link"><%= link_to "Products", products_path, remote: true %></li> 
-        <li class="top-link"><%= link_to "Orders", orders_path, remote: true %></li> 
-        <li class="top-link"><%= link_to "Contacts", contacts_path %></li> 
-        <li class="top-link"><%= link_to "Room", chatrooms_path %></li> 
+        <li class="top-link <%= 'active' if params[:controller] == 'orders' %>"><%= link_to "Orders", orders_path, remote: true %></li> 
+        <li class="top-link <%= 'active' if params[:controller] == 'contacts' %>"><%= link_to "Contacts", contacts_path %></li> 
+        <li class="top-link <%= 'active' if params[:controller] == 'chatrooms' %>"><%= link_to "Room", chatrooms_path %></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>

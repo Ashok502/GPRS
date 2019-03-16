@@ -22,13 +22,13 @@
               <% unread_messages = true %>
               <div class="strike"><span>Unread Messages</span></div>
             <% end %>        
-            <%= render partial: 'chat_messages/chat_message', locals: {message: message} %>        
+            <%= render partial: 'chat_messages/chat_message', locals: {message: message} %>    
           <% end %>
         </ul>
       </div>
 
       <%= form_for @message do |f| %>
-      <%= f.text_field :body, placeholder: "Message", class: "form-control", autofocus: true %>
+        <%= f.text_field :body, placeholder: "Message", class: "form-control", autofocus: true %>
       <% end %>
     </div>
   </div>
