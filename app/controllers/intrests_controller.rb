@@ -1,7 +1,7 @@
 class IntrestsController < ApplicationController
 	def create
 		@user = current_user	
-		@intrests = @user.intrests	
+		@intrests = @user.intrests.order(created_at: 'desc')
 		@intrest = Intrest.new(post_params.merge(user_id: @user.id))
 		if @intrest.user.limit_intrests? <= 10 && @intrest.save
 			ajax_submit?

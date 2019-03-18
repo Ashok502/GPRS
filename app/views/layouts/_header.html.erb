@@ -54,9 +54,9 @@
             <%= image_tag(current_user.avatar.url, class: 'comment-logo') %> My Account <span class="caret"></span>
           </a>
           <ul class="dropdown-menu">
-            <li><%= link_to "#{icon} Settings".html_safe, "#", 'data-toggle' => 'modal', 'data-target' => '#ChangeProfile'%></li>
-            <li><%= link_to "#{icon} Change Password".html_safe, "#", 'data-toggle' => 'modal','data-target' => '#ChangePassword' %></li>
-            <li><%= link_to "#{icon} Logout".html_safe, logout_path, method: :delete %></li>
+            <li><%= link_to "#{icon('wrench')} Settings".html_safe, "#", 'data-toggle' => 'modal', 'data-target' => '#ChangeProfile'%></li>
+            <li><%= link_to "#{icon('flash')} Change Password".html_safe, "#", 'data-toggle' => 'modal','data-target' => '#ChangePassword' %></li>
+            <li><%= link_to "#{icon('log-out')} Logout".html_safe, logout_path, method: :delete %></li>
           </ul>
         </li>
       </ul>           

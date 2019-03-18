@@ -1,7 +1,7 @@
 module ApplicationHelper
 
-	def icon
-		"<span class='glyphicon glyphicon-arrow-right'></span>"
+	def icon(icon)
+		"<span class='glyphicon glyphicon-#{icon}'></span>"
 	end
 
 	def ajax_submit?

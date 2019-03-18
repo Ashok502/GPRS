@@ -259,3 +259,14 @@ li.active > a{padding-bottom: 17px;}
   background-size: cover;
   background-repeat: no-repeat;
 }
+
+select {
+ -moz-appearance: none;
+ -webkit-appearance: none;
+ appearance: none;
+ background-position: right center;
+ background-repeat: no-repeat;
+ background-size: 20px;
+ background-origin: content-box;
+ background-image: url(/assets/dropdown.png) !important;
+}

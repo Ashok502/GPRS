@@ -45,7 +45,7 @@ class ApplicationController < ActionController::Base
     session[:conversations] ||= []
     @posts = Post.order("created_at desc").page(params[:page]).per_page(3)    
     @galleries = current_user ? current_user.galleries : 0
-    @intrests = current_user ? current_user.intrests.all : 0
+    @intrests = current_user ? current_user.intrests.order(created_at: 'desc') : 0
     @ads = Ad.order("created_at desc")
     @events = current_user.events
     @notifications = current_user.notifications.where(read: false)
