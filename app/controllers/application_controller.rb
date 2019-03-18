@@ -48,7 +48,7 @@ class ApplicationController < ActionController::Base
     @intrests = current_user ? current_user.intrests.all : 0
     @ads = Ad.order("created_at desc")
     @events = current_user.events
-    @notifications = current_user.notifications.all
+    @notifications = current_user.notifications.where(read: false)
     @users = User.where.not(id: current_user, role: 'admin').order("updated_at desc")
     @orders = current_user.orders.where(success: true).page(params[:order_page]).per_page(5)
     @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])

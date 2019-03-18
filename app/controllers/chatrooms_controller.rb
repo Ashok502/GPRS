@@ -1,5 +1,5 @@
 class ChatroomsController < ApplicationController
-    before_action :is_login?
+  before_action :is_login?
 	def index
 		@chatrooms = Chatroom.all
 		@chatroom = Chatroom.new
@@ -19,6 +19,8 @@ class ChatroomsController < ApplicationController
 		@messages = @chatroom.chat_messages.order(created_at: :desc).limit(100).reverse
 		@chatroom_user = current_user.chatroom_users.find_by(chatroom_id: @chatroom.id)
 		@chatroom_users = @chatroom.chatroom_users.where.not(user_id: current_user)
+		@notify = Notification.find_by(id: params[:notifyid]) if params[:notifyid]
+		@notify.update(read: true) if params[:notifyid]
 		@message = @chatroom.chat_messages.new
 	end
 

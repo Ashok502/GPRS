@@ -1,4 +1,4 @@
-<%= link_to chatroom_path(notification.chatroom_id) do %>
+<%= link_to chatroom_path(notification.chatroom_id, notifyid: notification.id) do %>
 <li>
 	<%= notification.event %>
 	<span class="pull-right"> <%= notification.created_at.strftime("%d %b. %Y") %></span>

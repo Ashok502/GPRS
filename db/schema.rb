@@ -195,6 +195,7 @@ ActiveRecord::Schema.define(version: 2018_11_10_092347) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.integer "chatroom_id"
+    t.boolean "read", default: false
   end
 
   create_table "orders", force: :cascade do |t|
