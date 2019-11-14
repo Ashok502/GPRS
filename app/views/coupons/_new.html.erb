@@ -1,4 +1,7 @@
-<%= form_for @coupon, remote: true do |f| %>      
+<%= form_for @coupon, remote: true do |f| %>  
+<div class="input-group">
+    <%= f.select :product_id, options_for_select(["Select Product"]+Product.all.map{|a| [a.title, a.id]}, selected: f.object.product_id), class: 'form-control' %>
+</div>    
 <div class="input-group">
 	<%= f.text_field :percentage, class: 'form-control primary', autocomplete: "off", placeholder: "Percentage", required: true %>
 	<span class="input-group-btn">

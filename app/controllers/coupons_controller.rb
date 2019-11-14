@@ -19,8 +19,11 @@ class CouponsController < ApplicationController
 
 	def apply_code
 		@coupon = Coupon.find_by_coupon_code_and_status(params[:coupon_code], 'New')
-		if @coupon.present?
+		@coupon_id = Coupon.find_by(coupon_code: params[:coupon_code])
+		@user_coupon = UserCoupon.find_by_user_id_and_coupon_id(current_user.id, @coupon_id.id)
+		if @coupon.present? && !@user_coupon.present?
 			@coupon.update(cart_id: current_cart.id)
+			UserCoupon.create(user_id: current_user.id, coupon_id: @coupon_id.id)
 			ajax_submit?
 		end
 	end
