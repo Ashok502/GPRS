@@ -23,7 +23,6 @@
 //= require dropzone
 //= require fancybox
 //= require jquery_nested_form
-//= require turbolinks
 //= require highcharts
 //= require chartkick
 //= require best_in_place
