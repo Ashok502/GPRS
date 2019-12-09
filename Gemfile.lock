@@ -787,6 +787,7 @@ GEM
       json
       rack
     orm_adapter (0.5.0)
+    pagy (3.7.1)
     paperclip (6.0.0)
       activemodel (>= 4.2.0)
       activesupport (>= 4.2.0)
@@ -939,6 +940,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter
   omnicontacts
+  pagy (~> 3.5)
   paperclip
   pg
   puma (~> 3.11)

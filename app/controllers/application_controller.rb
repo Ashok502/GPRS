@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
   layout :layout?
   include ApplicationHelper
+   include Pagy::Backend
+
+
   helper :all
   helper_method :current_cart
   before_action :all_actions, if: proc { user_signed_in? }
@@ -50,7 +53,7 @@ class ApplicationController < ActionController::Base
     @events = current_user.events
     @notifications = current_user.notifications.where(read: false)
     @users = User.where.not(id: current_user, role: 'admin').order("updated_at desc")
-    @orders = current_user.orders.where(success: true).page(params[:order_page]).per_page(5)
+    @pagy, @orders = pagy(current_user.orders.where(success: true), items: 5, size: [])
     @conversations = Conversation.includes(:recipient, :messages).find(session[:conversations])
   end
 end

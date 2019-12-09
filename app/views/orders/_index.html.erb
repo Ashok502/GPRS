@@ -31,7 +31,7 @@
       </table>
     </div>
     <div class="pull-right">
-      <%= will_paginate @orders, page_links: false, param_name: 'order_page', previous_label: "❮", next_label: "❯" %>
+      <%== pagy_nav(@pagy) %>
     </div>
   </div>
 </div>

@@ -1,4 +1,6 @@
 module ApplicationHelper
+ include Pagy::Frontend
+
 
 	def icon(icon)
 		"<span class='glyphicon glyphicon-#{icon}'></span>"
