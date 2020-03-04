@@ -796,7 +796,7 @@ GEM
       terrapin (~> 0.6.0)
     pg (1.0.0)
     public_suffix (3.0.2)
-    puma (3.12.0)
+    puma (3.12.4)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -943,7 +943,7 @@ DEPENDENCIES
   pagy (~> 3.5)
   paperclip
   pg
-  puma (~> 3.11)
+  puma (~> 3.12)
   rails (~> 5.2.0)
   rails-jquery-autocomplete
   redis (~> 4.0)
